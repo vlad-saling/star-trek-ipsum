@@ -1,0 +1,131 @@
+            
+/*
+
+
+TODO: 
+make grid variable            
+make 6-1 class            
+solve internal paddings            
+            
+*/                                                                        
+
+
+
+/* BEGIN - general container and column container */
+
+ 
+
+.container {
+    margin: 0 auto;
+    max-width: 1012px;     /* main width */
+    overflow:hidden;
+    clear:none;
+}
+
+
+.cc {
+  width: 100%;
+  padding: 0.5% 3%;
+  display:inline-block;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+
+
+/* END - general column container */
+    
+
+/* BEGIN - columns */
+
+
+.c-1-1,
+.c-3-1,
+.c-3-2,
+.c-2-1,
+.c-4-1,
+.c-4-3
+{
+  display: inline;
+  float: left;
+}
+
+.c-1-1 {
+    width: 100%;
+}
+
+.c-2-1 {
+    width: 50%;
+}
+
+.c-3-1 {
+    width: 34%;
+}
+
+.c-3-1 + .c-3-1 {
+    width: 33%;
+}
+
+.c-3-2 {
+    width: 66%;
+}
+
+.c-3-1 + .c-3-2 {
+   width: 67%;
+}
+
+.c-3-2 + .c-3-1 {
+   width: 34%;
+}
+
+.c-4-1 {
+    width: 25%;
+}
+
+.c-4-3 {
+    width: 75%;
+}
+/* END - columns */
+
+
+/* BEGIN - responsive part */
+
+@media only screen and (max-width: 1012px) {
+    
+     .container {
+        min-width: 320px;
+        width: auto;
+        padding: 0 5% 5%;
+    }
+
+    
+}
+
+@media only screen and (max-width: 768px) {
+    
+    .container {
+        min-width: 240px;
+        width: auto;
+        padding: 0 5% 5%;
+    }
+    
+
+    .c-1-1,
+    .c-3-1,
+    .c-3-1 + .c-3-1,
+    .c-3-1 + .c-3-2, 
+    .c-3-2,
+    .c-3-2 + .c-3-1, 
+    .c-2-1,
+    .c-4-1,
+    .c-4-3
+    {
+      width: 100%;
+      box-sizing: border-box;
+    }
+    
+}
+
+/* END - responsive part */
+
+                
