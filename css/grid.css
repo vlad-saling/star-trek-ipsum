@@ -18,8 +18,13 @@ solve internal paddings
 .container {
     margin: 0 auto;
     max-width: 1012px;     /* main width */
-    overflow:hidden;
     clear:none;
+}
+
+.container::after {
+    content: " ";
+    display:block;
+    clear:both;
 }
 
 
