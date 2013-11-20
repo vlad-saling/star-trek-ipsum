@@ -278,6 +278,7 @@ p {margin: 0.5em 0; color: $st-dorange-txt}
         width: 100%;
         border-radius: 0 0 25px 0;
         @include fade;
+        float:left;
     }
 }
 
