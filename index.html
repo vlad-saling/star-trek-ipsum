@@ -15,91 +15,8 @@
         <link rel="icon" type="image/gif" href="treklogo.gif"/>
         <meta name="google-site-verification" content="jUFLYo2gPlXSirA0b5_9eXYc6sh3Ku__zHi84zauaeU" />
         <script src="js/libs/jquery-1.7.1.min.js"></script>
-        <script>
-           $(function() {
-               
-                var jsonfile = 'content.json?1';
-                var jsoncontent;
-    
-                $.getJSON(jsonfile, function(json) {
-    
-                if((json != null) || (( typeof json == 'string') && (json != ''))) {
-                jsoncontent = json;
-                }
-                });
-
-                $('#gen').click(function() {
-                    
-                 
-                 //+ Jonas Raoni Soares Silva
-                 //@ http://jsfromhell.com/array/shuffle [v1.0]
-                shuffle = function(o){ //v1.0
-                    for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
-                    return o;
-                };
-                    
-                shuffle(jsoncontent.item);
-    
-                var nop = $('#nop').val();
-                var bptag = "";
-                var eptag = "";
-                var stlitxt = "";
-                var borg = "";
-                var fborg = function(){
-                     if (borg != "") {
-                          stlitxt = stlitxt + bptag + borg + eptag;
-                     }
-                 }
-    
-                 if ($('#pt').is(':checked')) {
-                     bptag = "<p>\r\n";
-                     eptag = "\r\n</p>";
-                 }
-                 
-                 if ($('#borg').is(':checked')) {
-                     borg = jsoncontent.extra[1].paragraph;
-                 }
-                    
-                if ($('#bw').is(':checked')) {
-                    
-                        if (nop == 1) { 
-                             stlitxt = stlitxt + bptag + jsoncontent.extra[0].paragraph + eptag + "\r\n\r\n";
-                             
-                            fborg();
-                        }
-                        
-                        else {
-                            stlitxt = stlitxt + bptag + jsoncontent.extra[0].paragraph + eptag + "\r\n\r\n";
-                          
-                            for (i=0;i<nop-1;i++) {
-                            stlitxt = stlitxt + bptag + jsoncontent.item[i].paragraph + eptag + "\r\n\r\n";
-                            }
-                            fborg();
-                        }
-                            
-                }
-                
-                else {
-                        
-                      for (i=0;i<nop;i++) {
-                        stlitxt = stlitxt + bptag + jsoncontent.item[i].paragraph + eptag + "\r\n\r\n";
-                        }
-                        fborg();
-                
-                }
-    
-                $('#stli').text(stlitxt);
-    
-                });
-    
-                $('#stli').focus(function() {
-                $('#stli').select();
-                });
-                
-              
-                
-            });
-            </script>
+        <script src="js/the-script.js"></script>
+      
     </head>
     <body>
          <div id="fb-root"></div>
@@ -122,46 +39,83 @@
             <div class="main" role="main">
                 <div class="cc">
                     <form class="stlipsum">
-                        <div class="c-3-2">
-                            <div class="content-top">
-                                &nbsp;
-                            </div>
-                            <textarea id="stli"></textarea>
-                        </div>
-                        <div class="c-3-1">
+
+                          <div class="c-3-1">
                             <div class="options-top">
                                 &nbsp;
                             </div>
                             <div class="c-1-1 options">
                                 options
                             </div>
-                            <div class="c-1-1">
-                                <label for="nop">number of paragraphs</label>
-                                <select id="nop">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                    <option>6</option>
-                                    <option>7</option>
 
-                                </select>
+                            <div class="c-1-1 radiobuttons">
+
+                              <div class="c-2-1">
+                                <input class="radiobutton" name="radio1" type="radio" id="radio1" checked>
+                                <label for="radio1">paragraphs</label>
+                              </div>
+
+                              <div class="c-2-1">
+                                <input class="radiobutton" name="radio1" type="radio" id="radio2"> 
+                                <label for="radio2">lists</label>
+                              </div>
+
                             </div>
-                            <div class="c-1-1">
-                                <label for="pt">paragraph tag</label>
-                                <input type="checkbox" checked="checked" id="pt" />
+
+
+                            <div>
+
+                              <div class="c-1-1">
+                                  <label for="noit">number of paragraphs</label>
+                                  <select id="noit">
+                                      <option>1</option>
+                                      <option>2</option>
+                                      <option>3</option>
+                                      <option>4</option>
+                                      <option>5</option>
+                                      <option>6</option>
+                                      <option>7</option>
+
+                                  </select>
+                              </div>
+
+                              <div class="c-1-1">
+                                  <label for="ht">html tag</label>
+                                  <input type="checkbox" checked="checked" id="ht" />
+                              </div>
+
+
+
                             </div>
-                            <div class="c-1-1">
-                                <label for="bw">begin with "these are the voyages..."</label>
-                                <input type="checkbox" id="bw" />
+
+
+                            <div id="paragraph-settings">
+
+                              <div class="c-1-1">
+                                  <label for="bw">begin with "these are the voyages..."</label>
+                                  <input type="checkbox" id="bw" />
+                              </div>
+
+                              <div class="c-1-1">
+                                  <label for="borg">end with a hint of the borg</label>
+                                  <input type="checkbox" id="borg" />
+                              </div>
+
                             </div>
-                            <div class="c-1-1">
-                                <label for="borg">end with a hint of the borg</label>
-                                <input type="checkbox" id="borg" />
-                            </div>
+
+
+
+
                             <input type="button" value="make it so" id="gen" />
                         </div>
+
+                        <div class="c-3-2">
+                            <div class="content-top">
+                                &nbsp;
+                            </div>
+                            <textarea id="stli"></textarea>
+                        </div>
+
                         <div class="options-bottom">
                             &nbsp;
                         </div>
@@ -213,17 +167,14 @@ made by vlad saling (<a href="https://twitter.com/vladsaling">twitter</a> or <a 
 
 
 
-                          <h2><span>similar projects</span></h2>
-
-                          <p>it is always good to know, that you are not the only one with certain weakness for star trek:</p>
-
-                          <p><a href="http://www.rikeripsum.com/#!/">www.rikeripsum.com</a> made by <a href="https://twitter.com/jessicaspacekat">@jessicaspacekat</a></p>
-
                           <h2><span>live long and prosper</span></h2>
                           <p>
                             thanks to <a href="http://www.voyager.cz/">http://www.voyager.cz/</a> for sharing star trek stuff and to <a href="http://twitter.com/#!/Krym_sk">@Krym_sk</a> for teaching me some javascript.
                             
                         </p>
+
+
+   
                           <p>
                            disclaimer: star trek®, in all its various forms, and related marks are trademarks of cbs studios inc. 
                            all other trademarks and copyrights are the property of their respective holders. no infringement on their copyrights is intended. 

@@ -22,6 +22,34 @@
   {"paragraph" : "These are the voyages of the Starship Enterprise. Its continuing mission, to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no one has gone before. We need to neutralize the homing signal. Each unit has total environmental control, gravity, temperature, atmosphere, light, in a protective field. Sensors show energy readings in your area. We had a forced chamber explosion in the resonator coil. Field strength has increased by 3,000 percent."},
   {"paragraph" : "Resistance is futile."}
  
+  ],
+
+  "starfleet" : [
+  
+  {"model" : "USS Leyte Gulf - NCC-71427 - Commanded by Captain Aaron Juraj; First Starfleet Vessel to be infected by Nanites in Star Trek: Away Team."},
+  {"model" : "USS Excalibur - NCC-26517 - Part of the tachyon blockade during the Klingon Civil War. Later commanded by Captain Mackenzie Calhoun in Star Trek: New Frontier."},
+  {"model" : "USS Yamaguchi - NCC-26510 - Destroyed by the Borg at the Battle of Wolf 359."},
+  {"model" : "USS Bradbury - NX-72307 - Scheduled to transport Wesley Crusher to Starfleet Academy and undergoes warp drive performance tests."},
+  {"model" : "USS Hathaway - NCC-2593 - Decommissioned, participated in exercises against the USS Enterprise-D. Its destruction was faked in a ruse to foil Ferengi attackers."},
+  {"model" : "USS Stargazer - NCC-2893 - Jean-Luc Picard's first command. Abandoned following the Battle of Maxia, later returned to Starfleet."},
+  {"model" : "USS Defiant NCC-1764 - Taken to Mirror Universe by Tholians, in \"The Tholian Web\". Captured by crew of ISS Enterprise (NX-01) and used in service of the Terran Empire, in \"In a Mirror, Darkly\"."},
+  {"model" : "USS Enterprise - NCC-1701 - Commanded by Robert April (2245–2250), Christopher Pike (2250–2265), James T. Kirk (2265-2270, 2271–2285), and Willard Decker (2270-2271), Vessel's self-destruction carried out while in orbit of the Genesis Planet, to prevent ship from falling into Klingon hands."},
+  {"model" : "USS Exeter - NCC-1672 - All crew lost killed by alien disease except Captain Ronald Tracey who was on the planet surface when the disease struck the crew."},
+  {"model" : "USS Farragut - NCC-1647 - Ship on which James Kirk served as a phaser station operator. Attacked by the Dikironium Cloud Creature, killing half the crew. ad. "},
+  {"model" : "USS Vengeance - Developed by Khan Noonien Singh and Starfleet Admiral Alexander Marcus to combat the Klingon Empire. The starship fights the USS Enterprise and crash lands on Starfleet Headquarters in San Francisco in Star Trek Into Darkness."},
+  {"model" : "USS Potemkin - NCC-18253 - William Riker's assignment before his transfer to the USS Enterprise-D. Part of the tachyon blockade during the Klingon Civil War. Participates in the Battle for Deep Space 9 and First Battle of Chin'toka."},
+  {"model" : "USS Yamato - NCC-71807 - Crew discovered Iconian artifacts but is infected by a computer virus that causes antimatter containment loss. The virus causes the ship to explode with all hands lost."},
+  {"model" : "USS Voyager - NCC-74656 - Primary setting of Star Trek: Voyager. Commanded by Captain Kathryn Janeway."},
+  {"model" : "USS Sarajevo - NCC-38529 - Lost in the Gamma Quadrant in 2371. Later recovered and served in the Dominion War."},
+  {"model" : "USS Titan - NCC-80102 - The USS Titan is the first command of Captain William Thomas Riker, former first officer of the USS Enterprise-D and USS Enterprise-E."},
+  {"model" : "USS Reliant - NCC-1864 - Ship on which Pavel Chekov serves as first officer. Assigned to Project Genesis and later hijacked by Khan Noonien Singh. Destroyed by Genesis Device detonation."},
+  {"model" : "ISS Enterprise - NX-01 - The Mirror Universe version of the NX-01; appeared in the fourth season two-parter, \"In a Mirror, Darkly\"."},
+  {"model" : "USS Shenandoah - NCC-73024 - Taken by Dax and Worf to rescue a Cardassian informant from the Dominion. Severely damaged by the Jem'Hadar en route to deliver diplomatic message to Grand Nagus Zek."},
+  {"model" : "USS Yangtzee Kiang - NCC-72453 - Hijacked by Bajoran terrorist Tahna Los. Became the first DS9 runabout to be destroyed when it crashed on a moon in the Gamma Quadrant."},
+  {"model" : "USS Yellowstone - NX-74751 - Prototype for an advanced runabout designed in large part by Ensign Harry Kim and Lieutenant Laska in an alternate timeline. Destroyed by antimatter containment loss."},
+  {"model" : "Shuttlecraft Cochrane - USS Voyager Test bed for Warp 10 flight piloted by Tom Paris. Very closely resembles the later hull design for Delta Flyer. Destroyed attempting to retrieve Warp Core."}
+    
   ]
+
 }
 
