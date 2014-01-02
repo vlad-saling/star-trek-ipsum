@@ -37,13 +37,13 @@ $(function() {
 
     $('#gen').click(function() {
 
-        var stlitxt = "";
-        var noit = $('#noit').val();
-        var btag = "";
-        var etag = "";
+        stlitxt = "";
+        noit = $('#noit').val();
+        btag = "";
+        etag = "";
 
         //generating text
-        var textFill = function(jsonItem) {
+        textFill = function(jsonItem) {
             stlitxt = stlitxt + btag + jsonItem + etag + "\r\n\r\n";
         };
 
@@ -53,8 +53,8 @@ $(function() {
             shuffle(jsoncontent.item);
 
             
-            var borg = "";
-            var fborg = function(){
+            borg = "";
+            fborg = function(){
                 if (borg != "") {
                     stlitxt = stlitxt + btag + borg + etag;
                 }
