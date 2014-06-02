@@ -16,11 +16,13 @@ $(function() {
     $('#radio1').click(function() {
         $('#paragraph-settings').css('display','block');
         ipsumType = 'paragraph';
+        $('#lorem-style').text('number of paragraphs');
     });
 
     $('#radio2').click(function() {
         $('#paragraph-settings').css('display','none');
         ipsumType = 'lists';
+         $('#lorem-style').text('number of list items');
     });
 
 
