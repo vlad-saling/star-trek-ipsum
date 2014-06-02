@@ -1,32 +1,34 @@
 
+
 $(function() {
-   
-    var jsonfile = 'content.json?1';
+
+    var jsonfile = 'content/content.json?1';
     var jsoncontent;
-    var ipsumType = "paragraph";
+    var ipsumType = 'paragraph';
 
     $.getJSON(jsonfile, function(json) {
 
-    if((json != null) || (( typeof json == 'string') && (json != ''))) {
+    if((json !== null) || (( typeof json == 'string') && (json !== ''))) {
             jsoncontent = json;
         }
     });
 
     $('#radio1').click(function() {
         $('#paragraph-settings').css('display','block');
-        ipsumType = "paragraph";
+        ipsumType = 'paragraph';
     });
 
     $('#radio2').click(function() {
         $('#paragraph-settings').css('display','none');
-        ipsumType = "lists";
+        ipsumType = 'lists';
     });
 
 
     //+ Jonas Raoni Soares Silva
     //@ http://jsfromhell.com/array/shuffle [v1.0]
-    shuffle = function(o){ //v1.0
-        for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+    var shuffle = function(o){ //v1.0
+        for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), 
+            x = o[--i], o[i] = o[j], o[j] = x);
         return o;
     };
 
@@ -37,32 +39,33 @@ $(function() {
 
     $('#gen').click(function() {
 
-        stlitxt = "";
-        noit = $('#noit').val();
-        btag = "";
-        etag = "";
+        var stlitxt = '';
+        var noit = $('#noit').val();
+        var btag = '';
+        var etag = '';
+        var i = null;
 
         //generating text
-        textFill = function(jsonItem) {
-            stlitxt = stlitxt + btag + jsonItem + etag + "\r\n\r\n";
+        var textFill = function(jsonItem) {
+            stlitxt = stlitxt + btag + jsonItem + etag + '\r\n\r\n';
         };
 
-        if (ipsumType == "paragraph") {
+        if (ipsumType == 'paragraph') {
         
                 
             shuffle(jsoncontent.item);
 
             
-            borg = "";
-            fborg = function(){
-                if (borg != "") {
+            var borg = '';
+            var fborg = function(){
+                if (borg !== '') {
                     stlitxt = stlitxt + btag + borg + etag;
                 }
-            }
+            };
 
             if ($('#ht').is(':checked')) {
-                btag = "<p>\r\n";
-                etag = "\r\n</p>";
+                btag = '<p>\r\n';
+                etag = '\r\n</p>';
             }
              
             if ($('#borg').is(':checked')) {
@@ -105,16 +108,16 @@ $(function() {
             shuffle(jsoncontent.starfleet);
 
             if ($('#ht').is(':checked')) {
-                btag = "<li>\r\n";
-                etag = "\r\n</li>";
+                btag = '<li>\r\n';
+                etag = '\r\n</li>';
 
-                stlitxt = "<ul>\r\n\r\n"
+                stlitxt = '<ul>\r\n\r\n';
 
                 for (i=0;i<noit;i++) {
                     textFill(jsoncontent.starfleet[i].model);
                 }
 
-                stlitxt = stlitxt + "</ul>"
+                stlitxt = stlitxt + '</ul>';
 
             }
 

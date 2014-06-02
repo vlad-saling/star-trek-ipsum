@@ -12,21 +12,34 @@
         <meta name="author" content="vlad saling, https://github.com/vlad-saling">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <link rel="stylesheet" type="text/css" href="css/style.css">
-        <link rel="icon" type="image/gif" href="treklogo.gif"/>
+        <link rel="icon" type="image/gif" href="img/treklogo.gif"/>
         <meta name="google-site-verification" content="jUFLYo2gPlXSirA0b5_9eXYc6sh3Ku__zHi84zauaeU" />
+
+        <!-- build:js:prod js/app.js -->
         <script src="js/libs/jquery-1.7.1.min.js"></script>
+        <script src="js/libs/modernizr.js"></script>
         <script src="js/the-script.js"></script>
+        <!-- /build -->
+
       
     </head>
     <body>
-         <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+
+
+        <!-- build:remove:dev -->
+        <div id="fb-root"></div>
+        <script>
+          (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+            fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));
+        </script>
+        <!-- /build -->
+
+
         <div class="container">
             <header>
                 <div class="cc">
@@ -128,11 +141,13 @@
                         
                        <h2><span>set phasers to share</span></h2>
                        
+                       <!-- build:remove:dev -->
                            <div class="twrapper">
                           <a href="https://twitter.com/share?text=Star Trek Ipsum placeholder text&url=http://star-trek-ipsum.meetpollux.com/&via=vladsaling" class="twitter-share-button" data-lang="en">Tweet</a>
 
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> 
                        </div>
+
                        
                       
                        
@@ -149,7 +164,9 @@
     po.src = 'https://apis.google.com/js/plusone.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
   })();
-</script>
+ </script>
+
+ <!-- /build -->
                         
                         <h2><span>about</span></h2>
                         <p>
@@ -185,7 +202,8 @@ made by vlad saling (<a href="https://twitter.com/vladsaling">twitter</a> or <a 
             </footer>
         </div>
         <!--! end of #container -->
-        <script src="js/libs/modernizr.js"></script>
+
+<!-- build:remove:dev -->
        <script type="text/javascript">
 
   var _gaq = _gaq || [];
@@ -199,5 +217,10 @@ made by vlad saling (<a href="https://twitter.com/vladsaling">twitter</a> or <a 
   })();
 
 </script>
+
+<!-- /build -->
+
+
+
     </body>
 </html>

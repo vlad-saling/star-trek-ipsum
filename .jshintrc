@@ -1,0 +1,25 @@
+{
+  "indent": 2,
+  "quotmark": "single",
+  "camelcase": true,
+  "maxlen": 99,
+  "maxcomplexity": 10,
+  "undef": true,
+  "unused": true,
+  "trailing": true,
+  "globalstrict": false,
+  "globals": {
+    "angular": false,
+    "_": false,
+    "beforeEach": false,
+    "afterEach": false,
+    "describe": false,
+    "it": false,
+    "module": false,
+    "inject": false,
+    "expect": false,
+    "document": false,
+    "$": false,
+    "jQuery": false
+  }
+}
