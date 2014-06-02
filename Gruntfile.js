@@ -142,9 +142,6 @@ module.exports = function(grunt) {
 
     acs: grunt.file.readJSON('acs.json'),
 
-    dirs: {
-      'content': '_prod/content'
-    },
 
     sftp: {
       stli: {
@@ -152,7 +149,7 @@ module.exports = function(grunt) {
           './': ["_prod/**"]
         },
         options: {
-          path: '/public_html/_banner',
+          path: '/public_html/_sub/star-trek-ipsum',
           host: '<%= acs.host %>',
           username: '<%= acs.username %>',
           password: '<%= acs.password %>',
