@@ -1,5 +1,3 @@
-
-
 $(function() {
 
     var jsonfile = 'content/content.json?1';
@@ -7,9 +5,9 @@ $(function() {
     var ipsumType = 'paragraph';
 
     $.getJSON(jsonfile, function(json) {
-
-    if((json !== null) || (( typeof json == 'string') && (json !== ''))) {
+        if((json !== null) || (( typeof json == 'string') && (json !== ''))) {
             jsoncontent = json;
+            generate();
         }
     });
 
@@ -36,10 +34,7 @@ $(function() {
 
 
 
-
-
-
-    $('#gen').click(function() {
+    var generate = function() {
 
         var stlitxt = '';
         var noit = $('#noit').val();
@@ -134,12 +129,20 @@ $(function() {
 
         $('#stli').text(stlitxt);
 
-    });
+    };
+
 
     $('#stli').focus(function() {
-    $('#stli').select();
+        $('#stli').select();
     });
+
+
+    $('#gen').click(generate); 
+
+
     
   
     
 });
+
+
