@@ -866,7 +866,7 @@ p {
 .c-3-1 .c-1-1 .radiobutton {
   float: left;
   background: transparent;
-  margin: 6px 4px 0 0;
+  margin: 5px 4px 0 0;
 }
 @media only screen and (max-width: 768px) {
   .c-3-1 .c-1-1 .radiobutton {
