@@ -81,7 +81,7 @@ module.exports = function(grunt) {
     //merging everything together
     concat: {
       libs: {
-        src: ['_dev/js/libs/*.js','_dev/js/the-script.min.js'],
+        src: ['_dev/js/the-script.min.js'],
         dest: '_prod/js/app.js'
       }
     },
