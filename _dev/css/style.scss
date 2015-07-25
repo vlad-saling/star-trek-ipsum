@@ -259,6 +259,11 @@ p {margin: 0.5em 0; color: $st-dorange-txt}
         font-size: 0.8em;
         min-height: 25px;
 
+        @media only screen and (max-width: 768px) {
+            padding-top: 2%;
+            padding-bottom: 2%;
+        }
+
         
         &.options {
             padding: 0 0 0 5px;
@@ -286,6 +291,16 @@ p {margin: 0.5em 0; color: $st-dorange-txt}
             float:left;
             background: transparent;
             margin: 6px 4px 0 0;
+
+            @media only screen and (max-width: 768px) {
+                margin-top: 4px;
+            }
+        }
+
+        .radiogroup {
+            @media only screen and (max-width: 768px) {
+                margin: 8px 0 8px;
+            }
         }
 
     }
