@@ -293,16 +293,15 @@ p {margin: 0.5em 0; color: $st-dorange-txt}
             margin: 6px 4px 0 0;
 
             @media only screen and (max-width: 768px) {
-                margin-top: 4px;
+                margin-top: 3px;
             }
         }
 
         .radiogroup {
             @media only screen and (max-width: 768px) {
-                margin: 8px 0 8px;
+                margin: 5px 0 5px;
             }
         }
-
     }
 
         
@@ -375,7 +374,14 @@ p {margin: 0.5em 0; color: $st-dorange-txt}
         border-radius: 0px;
     }
     
+    .sharelink {
+        margin-bottom: 8px;
+        display: inline-block;
+    }
 
+    p {
+        line-height: 1.5em;
+    }
 }
 
 @media only screen and (max-width: 550px) {

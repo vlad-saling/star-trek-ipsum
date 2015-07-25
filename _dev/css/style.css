@@ -870,12 +870,12 @@ p {
 }
 @media only screen and (max-width: 768px) {
   .c-3-1 .c-1-1 .radiobutton {
-    margin-top: 4px;
+    margin-top: 3px;
   }
 }
 @media only screen and (max-width: 768px) {
   .c-3-1 .c-1-1 .radiogroup {
-    margin: 8px 0 8px;
+    margin: 5px 0 5px;
   }
 }
 .c-3-1 input[type=button] {
@@ -984,6 +984,15 @@ p {
 
   .c-3-1 input[type=button] {
     border-radius: 0px;
+  }
+
+  .sharelink {
+    margin-bottom: 8px;
+    display: inline-block;
+  }
+
+  p {
+    line-height: 1.5em;
   }
 }
 @media only screen and (max-width: 550px) {
