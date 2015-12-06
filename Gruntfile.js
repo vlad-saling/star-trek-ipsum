@@ -136,31 +136,7 @@ module.exports = function(grunt) {
 
         }
       }
-    },
-
-
-
-    acs: grunt.file.readJSON('acs.json'),
-
-
-    sftp: {
-      stli: {
-        files: {
-          './': ["_prod/**"]
-        },
-        options: {
-          path: '/public_html/_sub/star-trek-ipsum',
-          host: '<%= acs.host %>',
-          username: '<%= acs.username %>',
-          password: '<%= acs.password %>',
-          srcBasePath: "_prod/",
-          createDirectories: true,
-          showProgress: true
-        }
-      }
-    },
-
-
+    }
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
@@ -171,11 +147,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-processhtml');
-  grunt.loadNpmTasks('grunt-ssh');
 
   //for my bad memory
   grunt.registerTask('production', ['sass:prod', 'uglify','concat','copy','processhtml','htmlmin']);
   grunt.registerTask('indexTemplates', ['watch:processhtml']);
-  grunt.registerTask('deploy', ['sftp']);
 
 };
