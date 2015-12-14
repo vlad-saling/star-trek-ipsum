@@ -4,7 +4,7 @@ Star Trek Ipsum
 Star Trek inspired placeholder text
 
 Official page
-[http://star-trek-ipsum.meetpollux.com/](http://star-trek-ipsum.meetpollux.com/)
+[http://vlad-saling.github.io/star-trek-ipsum/](http://vlad-saling.github.io/star-trek-ipsum/)
 
 
 Note: handcrafted paraphs are in content.json file
