@@ -964,7 +964,8 @@ p {
   margin-right: -30px;
 }
 
-.sharelink {
+.sharelink,
+.sharelink:visited {
   background: #517DFF;
   /* Old browsers */
   background: -moz-linear-gradient(top, #517DFF 0%, #6690FF 100%);
@@ -987,9 +988,11 @@ p {
   border-radius: 14px;
   margin-bottom: 8px;
   display: inline-block;
+  transition: color .3s;
 }
-.sharelink:hover {
-  color: #ddd;
+.sharelink:hover,
+.sharelink:visited:hover {
+  color: #eee;
 }
 
 /* === responsive stuff === */

@@ -342,19 +342,19 @@ p {margin: 0.5em 0; color: $st-dorange-txt}
     }
 }
 
-.sharelink {
+.sharelink,
+.sharelink:visited {
     @include rad-grad-lblue-alt;
     color: #000;
     text-decoration: none;
-
     padding: 3px 9px;
     border-radius: 14px;
-    
     margin-bottom: 8px;
     display: inline-block;
+    transition: color .3s;
     
     &:hover {
-        color: #ddd;
+        color: #eee;
     }
 }
 
