@@ -96,6 +96,7 @@ $st-light-pink-bg: #fecdbe;
 
 body {
     font-family: Tahoma, Arial, Sans-Serif;
+    font-size: 18px;
     background: #000000; /* Old browsers */
     background: url(../img/starfield.jpg) center top no-repeat #000 scroll;
 }
@@ -341,6 +342,22 @@ p {margin: 0.5em 0; color: $st-dorange-txt}
     }
 }
 
+.sharelink {
+    @include rad-grad-lblue-alt;
+    color: #000;
+    text-decoration: none;
+
+    padding: 3px 9px;
+    border-radius: 14px;
+    
+    margin-bottom: 8px;
+    display: inline-block;
+    
+    &:hover {
+        color: #ddd;
+    }
+}
+
 
 
 
@@ -372,11 +389,6 @@ p {margin: 0.5em 0; color: $st-dorange-txt}
 
     .c-3-1 input[type=button] {
         border-radius: 0px;
-    }
-    
-    .sharelink {
-        margin-bottom: 8px;
-        display: inline-block;
     }
 
     p {
