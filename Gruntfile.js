@@ -42,6 +42,7 @@ module.exports = function(grunt) {
         options: {
           style: 'compressed',
           require: 'sass-css-importer',
+          "sourcemap=none": ''
         },
         files: {
           '_prod/css/style.css': '_dev/css/style.scss',
