@@ -112,7 +112,7 @@ module.exports = function(grunt) {
       content: {
         expand: true,
         cwd: '_dev',
-        src: 'content/*.json',
+        src: 'content/content.json',
         dest: '_prod/',
       },
       stuff: {
@@ -136,7 +136,19 @@ module.exports = function(grunt) {
 
         }
       }
+    },
+    
+    jsonmin: {
+        dev: {
+            options: {
+                stripWhitespace: true
+            },
+            files: {
+                "_dev/content/content.json" : "_dev/content/content.source.json",
+            }
+        }
     }
+    
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
@@ -147,9 +159,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-processhtml');
+  grunt.loadNpmTasks('grunt-jsonmin');
 
   //for my bad memory
-  grunt.registerTask('production', ['sass:prod', 'uglify','concat','copy','processhtml','htmlmin']);
+  grunt.registerTask('production', ['sass:prod', 'uglify', 'jsonmin:dev','concat','copy','processhtml','htmlmin']);
   grunt.registerTask('indexTemplates', ['watch:processhtml']);
 
 };
