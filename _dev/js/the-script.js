@@ -29,14 +29,6 @@ $(function() {
     request.send();
 
 
-
-    // $.getJSON(jsonfile, function(json) {
-    //     if((json !== null) || (( typeof json == 'string') && (json !== ''))) {
-    //         jsoncontent = json;
-    //         generate();
-    //     }
-    // });
-
     $('#radio1').click(function() {
         $('#paragraph-settings').css('display','block');
         ipsumType = 'paragraph';
