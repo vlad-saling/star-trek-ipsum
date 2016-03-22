@@ -27,19 +27,36 @@ $(function() {
     };
 
     request.send();
+    
+    
+    
 
-
-    $('#radio1').click(function() {
-        $('#paragraph-settings').css('display','block');
+    document.getElementById('radio1').onclick = function () {
+        document.getElementById('paragraph-settings').style.display = 'block';
         ipsumType = 'paragraph';
-        $('#lorem-style').text('number of paragraphs');
-    });
-
-    $('#radio2').click(function() {
-        $('#paragraph-settings').css('display','none');
+        document.getElementById('lorem-style').innerText = 'number of paragraphs';
+    };
+    
+    
+    document.getElementById('radio2').onclick = function () {
+        document.getElementById('paragraph-settings').style.display = 'none';
         ipsumType = 'lists';
-         $('#lorem-style').text('number of list items');
-    });
+        document.getElementById('lorem-style').innerText = 'number of list items';
+    };
+    
+   
+
+    // $('#radio1').click(function() {
+    //     $('#paragraph-settings').css('display','block');
+    //     ipsumType = 'paragraph';
+    //     $('#lorem-style').text('number of paragraphs');
+    // });
+
+    // $('#radio2').click(function() {
+    //     $('#paragraph-settings').css('display','none');
+    //     ipsumType = 'lists';
+    //      $('#lorem-style').text('number of list items');
+    // });
 
 
     //+ Jonas Raoni Soares Silva
