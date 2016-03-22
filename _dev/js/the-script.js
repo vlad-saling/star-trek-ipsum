@@ -46,19 +46,6 @@ $(function() {
     
    
 
-    // $('#radio1').click(function() {
-    //     $('#paragraph-settings').css('display','block');
-    //     ipsumType = 'paragraph';
-    //     $('#lorem-style').text('number of paragraphs');
-    // });
-
-    // $('#radio2').click(function() {
-    //     $('#paragraph-settings').css('display','none');
-    //     ipsumType = 'lists';
-    //      $('#lorem-style').text('number of list items');
-    // });
-
-
     //+ Jonas Raoni Soares Silva
     //@ http://jsfromhell.com/array/shuffle [v1.0]
     var shuffle = function(o){ //v1.0
