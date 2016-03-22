@@ -1,4 +1,4 @@
-$(function() {
+(function() {
 
     var jsoncontent;
     var ipsumType = 'paragraph';
@@ -59,7 +59,7 @@ $(function() {
     var generate = function() {
 
         var stlitxt = '';
-        var noit = $('#noit').val();
+        var noit = document.getElementById('noit').value;
         var btag = '';
         var etag = '';
         var i = null;
@@ -82,16 +82,16 @@ $(function() {
                 }
             };
 
-            if ($('#ht').is(':checked')) {
+            if (document.getElementById('ht').checked) {
                 btag = '<p>\r\n';
                 etag = '\r\n</p>';
             }
              
-            if ($('#borg').is(':checked')) {
+            if (document.getElementById('borg').checked) {
                 borg = jsoncontent.extra[1].paragraph;
             }
                 
-            if ($('#bw').is(':checked')) {
+            if (document.getElementById('bw').checked) {
                 
                 if (noit == 1) { 
                     textFill(jsoncontent.extra[0].paragraph);
@@ -126,7 +126,7 @@ $(function() {
      
             shuffle(jsoncontent.starfleet);
 
-            if ($('#ht').is(':checked')) {
+            if (document.getElementById('ht').checked) {
                 btag = '<li>\r\n';
                 etag = '\r\n</li>';
 
@@ -148,23 +148,27 @@ $(function() {
             }
 
         }
+        
+        document.getElementById('stli').innerText = stlitxt;
 
-        $('#stli').text(stlitxt);
 
     };
 
 
-    $('#stli').focus(function() {
-        $('#stli').select();
-    });
+    document.getElementById('stli').onfocus = function() {
+        document.getElementById('stli').select();
+    }
 
 
-    $('#gen').click(generate); 
+    
+    
+    
+    document.getElementById('gen').onclick = generate;
 
 
     
   
     
-});
+})();
 
 
