@@ -1,15 +1,41 @@
 $(function() {
 
-    var jsonfile = 'content/content.json?1';
     var jsoncontent;
     var ipsumType = 'paragraph';
+    
+    
+    var request = new XMLHttpRequest();
+    request.open('GET', 'content/content.json?', true);
 
-    $.getJSON(jsonfile, function(json) {
-        if((json !== null) || (( typeof json == 'string') && (json !== ''))) {
-            jsoncontent = json;
-            generate();
+    request.onload = function() {
+        if (request.status >= 200 && request.status < 400) {
+            // Success!
+            jsoncontent = JSON.parse(request.responseText);
+            
+            if((jsoncontent !== null) || (( typeof jsoncontent == 'string') && (jsoncontent !== ''))) {
+                generate();
+            }
+        } 
+        else {
+            // We reached our target server, but it returned an error
+            console.log('Content file not available')
         }
-    });
+    };
+
+    request.onerror = function() {
+    // There was a connection error of some sort
+    };
+
+    request.send();
+
+
+
+    // $.getJSON(jsonfile, function(json) {
+    //     if((json !== null) || (( typeof json == 'string') && (json !== ''))) {
+    //         jsoncontent = json;
+    //         generate();
+    //     }
+    // });
 
     $('#radio1').click(function() {
         $('#paragraph-settings').css('display','block');
