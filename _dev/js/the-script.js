@@ -149,7 +149,7 @@
 
         }
         
-        document.getElementById('stli').innerText = stlitxt;
+        document.getElementById('stli').innerHTML = stlitxt;
 
 
     };
