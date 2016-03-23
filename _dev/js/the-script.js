@@ -1,28 +1,50 @@
-$(function() {
+(function() {
 
-    var jsonfile = 'content/content.json?1';
     var jsoncontent;
     var ipsumType = 'paragraph';
+    
+    
+    var request = new XMLHttpRequest();
+    request.open('GET', 'content/content.json?', true);
 
-    $.getJSON(jsonfile, function(json) {
-        if((json !== null) || (( typeof json == 'string') && (json !== ''))) {
-            jsoncontent = json;
-            generate();
+    request.onload = function() {
+        if (request.status >= 200 && request.status < 400) {
+            // Success!
+            jsoncontent = JSON.parse(request.responseText);
+            
+            if((jsoncontent !== null) || (( typeof jsoncontent == 'string') && (jsoncontent !== ''))) {
+                generate();
+            }
+        } 
+        else {
+            // We reached our target server, but it returned an error
+            console.log('Content file not available')
         }
-    });
+    };
 
-    $('#radio1').click(function() {
-        $('#paragraph-settings').css('display','block');
+    request.onerror = function() {
+    // There was a connection error of some sort
+    };
+
+    request.send();
+    
+    
+    
+
+    document.getElementById('radio1').onclick = function () {
+        document.getElementById('paragraph-settings').style.display = 'block';
         ipsumType = 'paragraph';
-        $('#lorem-style').text('number of paragraphs');
-    });
-
-    $('#radio2').click(function() {
-        $('#paragraph-settings').css('display','none');
+        document.getElementById('lorem-style').innerText = 'number of paragraphs';
+    };
+    
+    
+    document.getElementById('radio2').onclick = function () {
+        document.getElementById('paragraph-settings').style.display = 'none';
         ipsumType = 'lists';
-         $('#lorem-style').text('number of list items');
-    });
-
+        document.getElementById('lorem-style').innerText = 'number of list items';
+    };
+    
+   
 
     //+ Jonas Raoni Soares Silva
     //@ http://jsfromhell.com/array/shuffle [v1.0]
@@ -37,7 +59,7 @@ $(function() {
     var generate = function() {
 
         var stlitxt = '';
-        var noit = $('#noit').val();
+        var noit = document.getElementById('noit').value;
         var btag = '';
         var etag = '';
         var i = null;
@@ -60,16 +82,16 @@ $(function() {
                 }
             };
 
-            if ($('#ht').is(':checked')) {
+            if (document.getElementById('ht').checked) {
                 btag = '<p>\r\n';
                 etag = '\r\n</p>';
             }
              
-            if ($('#borg').is(':checked')) {
+            if (document.getElementById('borg').checked) {
                 borg = jsoncontent.extra[1].paragraph;
             }
                 
-            if ($('#bw').is(':checked')) {
+            if (document.getElementById('bw').checked) {
                 
                 if (noit == 1) { 
                     textFill(jsoncontent.extra[0].paragraph);
@@ -104,7 +126,7 @@ $(function() {
      
             shuffle(jsoncontent.starfleet);
 
-            if ($('#ht').is(':checked')) {
+            if (document.getElementById('ht').checked) {
                 btag = '<li>\r\n';
                 etag = '\r\n</li>';
 
@@ -126,23 +148,27 @@ $(function() {
             }
 
         }
+        
+        document.getElementById('stli').innerHTML = stlitxt;
 
-        $('#stli').text(stlitxt);
 
     };
 
 
-    $('#stli').focus(function() {
-        $('#stli').select();
-    });
+    document.getElementById('stli').onfocus = function() {
+        document.getElementById('stli').select();
+    }
 
 
-    $('#gen').click(generate); 
+    
+    
+    
+    document.getElementById('gen').onclick = generate;
 
 
     
   
     
-});
+})();
 
 
