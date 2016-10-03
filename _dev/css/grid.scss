@@ -5,8 +5,6 @@
 .container {
     margin: 0 auto;
     padding: 0 1%;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
     clear:none;
 
@@ -36,8 +34,6 @@
 
 [class^="c-"] {
   float:left;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   min-height: 1px;
 }
@@ -46,47 +42,11 @@
 
 .c-1-1 {width: 100%}
 
-.c-5-1 {width: 20%}
-.c-5-2 {width: 40%}
-.c-5-3 {width: 60%}
-.c-5-4 {width: 80%}
-
-.c-7-1 {width: 14.2%}
-.c-7-2 {width: 28.4%}
-.c-7-3 {width: 42.6%}
-.c-7-4 {width: 56.8%}
-.c-7-5 {width: 71%}
-.c-7-6 {width: 85.2%}
-
-.c-12-1 {width: 8.3%}
-.c-12-2 {width: 16.6%} 
-.c-12-3 {width: 24.9%}
-.c-12-4 {width: 33.2%}
-.c-12-5 {width: 41.5%}
-.c-12-6 {width: 50%}
-.c-12-7 {width: 58.1%}
-.c-12-8 {width: 66.4%}
-.c-12-9 {width: 74.7%}
-.c-12-10 {width: 83%} 
-.c-12-11 {width: 91.3%}
-
-
-/* 12-1 substite grids for greater accurancy */
 
 .c-2-1 {width: 50%}
 
 .c-3-1 {width: 33.3%}
 .c-3-2 {width: 66.6%}
-
-.c-4-1 {width: 25%}
-.c-4-2 {width: 50%} /* redundant (c-2-1) but kept for sake of userfriendlyness */
-.c-4-3 {width: 75%}
-
-.c-6-1 {width: 16.6%}
-.c-6-2 {width: 33.2%}
-.c-6-3 {width: 50%} /* redundant (c-2-1) but kept for sake of userfriendlyness */
-.c-6-4 {width: 66.4%}
-.c-6-5 {width: 83%}
 
 
 /* column nesting limit -> 4 levels allowed - may be removed or tweaked if needed */
@@ -119,8 +79,6 @@
     [class^="c-"]
     {
       width: 100%;
-      -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
       box-sizing: border-box;
     }
     

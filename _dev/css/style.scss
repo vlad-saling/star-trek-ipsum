@@ -1,7 +1,25 @@
 /* === imports =============================================== */
 
 @import "grid"; 
-@import "normalize"; 
+
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body, button, input, select, textarea {
+    font-family: sans-serif;
+}
+
+button, input, select, textarea {
+    font-size: 100%;
+    margin: 0;
+    vertical-align: baseline;
+}
+
+
 
 
 /* === variables =============================================== */
@@ -25,65 +43,30 @@ $st-light-pink-bg: #fecdbe;
 
 @mixin rad-grad-darkorange {
     background: #fce667; /* Old browsers */
-    background: -moz-radial-gradient(center, ellipse cover,  #fce667 0%, #ff7802 100%); /* FF3.6+ */
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#fce667), color-stop(100%,#ff7802)); /* Chrome,Safari4+ */
-    background: -webkit-radial-gradient(center, ellipse cover,  #fce667 0%,#ff7802 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-radial-gradient(center, ellipse cover, #fce667 0%,#ff7802 100%); /* Opera 12+ */
-    background: -ms-radial-gradient(center, ellipse cover, #fce667 0%,#ff7802 100%); /* IE10+ */
     background: radial-gradient(#fce667 0%,#ff7802 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fce667', endColorstr='#ff7802',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
 @mixin rad-grad-darkred {
     background: #F11124; /* Old browsers */
-    background: -moz-radial-gradient(center, ellipse cover,  #F11124 0%, #8F000F 100%); /* FF3.6+ */
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#F11124), color-stop(100%,#8F000F)); /* Chrome,Safari4+ */
-    background: -webkit-radial-gradient(center, ellipse cover,  #F11124 0%,#8F000F 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-radial-gradient(center, ellipse cover,  #F11124 0%,#8F000F 100%); /* Opera 12+ */
-    background: -ms-radial-gradient(center, ellipse cover,  #F11124 0%,#8F000F 100%); /* IE10+ */
     background: radial-gradient( #F11124 0%,#8F000F 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F11124', endColorstr='#8F000F',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
 @mixin rad-grad-lpink {
     background: #fcf8f7; /* Old browsers */
-    background: -moz-radial-gradient(center, ellipse cover,  #fcf8f7 0%, #fecdbe 100%); /* FF3.6+ */
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#fcf8f7), color-stop(100%,#fecdbe)); /* Chrome,Safari4+ */
-    background: -webkit-radial-gradient(center, ellipse cover,  #fcf8f7 0%,#fecdbe 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-radial-gradient(center, ellipse cover,  #fcf8f7 0%,#fecdbe 100%); /* Opera 12+ */
-    background: -ms-radial-gradient(center, ellipse cover,  #fcf8f7 0%,#fecdbe 100%); /* IE10+ */
     background: radial-gradient(#fcf8f7 0%,#fecdbe 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcf8f7', endColorstr='#fecdbe',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
 @mixin rad-grad-lblue {
     background: #507CFF; /* Old browsers */
-    background: -moz-radial-gradient(center, ellipse cover,  #9EC5FF 0%, #507CFF 100%); /* FF3.6+ */
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#9EC5FF), color-stop(100%,#507CFF)); /* Chrome,Safari4+ */
-    background: -webkit-radial-gradient(center, ellipse cover,  #9EC5FF 0%,#507CFF 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-radial-gradient(center, ellipse cover,  #9EC5FF 0%,#507CFF 100%); /* Opera 12+ */
-    background: -ms-radial-gradient(center, ellipse cover,  #9EC5FF 0%,#507CFF 100%); /* IE10+ */
     background: radial-gradient(#9EC5FF 0%,#507CFF 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9EC5FF', endColorstr='#507CFF',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
 @mixin rad-grad-lblue-alt {
-    background: #517DFF; /* Old browsers */
-    background: -moz-linear-gradient(top,  #517DFF 0%, #6690FF 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#517DFF), color-stop(100%,#6690FF)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  #517DFF 0%,#6690FF 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  #517DFF 0%,#6690FF 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  #517DFF 0%,#6690FF 100%); /* IE10+ */
     background: linear-gradient(top,  #517DFF 0%,#6690FF 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#517DFF', endColorstr='#6690FF',GradientType=0 ); /* IE6-9 */
 }
 
 @mixin fade {
     opacity: 0.8;
-    -o-transition: opacity 0.3s;
-    -moz-transition: opacity 0.3s;
-    -webkit-transition: opacity 0.3s;
-    -ms-transition: opacity 0.3s;
     transition: opacity 0.3s;
     
     &:hover {
@@ -139,18 +122,18 @@ header, footer {
         }
       
         &:before {
-        float:left;
-        margin-left: 40px
+            float:left;
+            margin-left: 40px
         }
 
         &:after {
-        float: right;
-        margin-right: 40px
+            float: right;
+            margin-right: 40px
         }
 
         span {
-        margin-right: 30px;
-        height: 40px;
+            margin-right: 30px;
+            height: 40px;
         }
     }
 
@@ -169,13 +152,13 @@ header, footer {
         }
 
         &:before {
-        float:left;
-        margin-left: 20px
+            float:left;
+            margin-left: 20px
         }
 
         &:after {
-        float: right;
-        margin-right: 20px
+            float: right;
+            margin-right: 20px
         }
         
         span {
@@ -210,12 +193,8 @@ header, footer {
 .c-1-1,
 .c-3-1,
 .c-3-2,
-.c-2-1,
-.c-4-1,
-.c-4-3 {
+.c-2-1 {
     padding: 0.5% 1%;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
 }
 
 textarea {
@@ -225,7 +204,6 @@ textarea {
     border-radius: 10px;
     padding: 10px;
     box-sizing: border-box;
-    -moz-box-sizing: border-box;
     color: #fff;
     background-color: transparent;
     font-size: 0.8em;
