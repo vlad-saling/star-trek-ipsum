@@ -40,7 +40,7 @@ module.exports = function(grunt) {
       },
       prod: {
         options: {
-          style: 'compressed',
+          outputStyle: 'compressed',
           require: 'sass-css-importer',
           "sourcemap=none": ''
         },
@@ -148,12 +148,23 @@ module.exports = function(grunt) {
                 "_dev/content/content.json" : "_dev/content/content.source.json",
             }
         }
+    },
+
+    embed: {
+      default: {
+        options: {
+          threshold: '30KB'
+        },
+        files: {
+          '_prod/index.html': '_prod/index.html'
+        }
+      }
     }
     
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-copy');
@@ -161,9 +172,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-processhtml');
   grunt.loadNpmTasks('grunt-jsonmin');
+  grunt.loadNpmTasks('grunt-embed');
 
   //for my bad memory
-  grunt.registerTask('production', ['sass:prod', 'uglify', 'jsonmin:dev','concat','copy','processhtml','htmlmin']);
+  grunt.registerTask('production', ['sass:prod', 'uglify', 'jsonmin:dev','concat','copy','processhtml','htmlmin', 'embed']);
   grunt.registerTask('indexTemplates', ['watch:processhtml']);
 
 };
