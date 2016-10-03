@@ -43,26 +43,27 @@ $st-light-pink-bg: #fecdbe;
 
 @mixin rad-grad-darkorange {
     background: #fce667; /* Old browsers */
-    background: radial-gradient(#fce667 0%,#ff7802 100%); /* W3C */
+    background: radial-gradient(ellipse at center, #fce667 0%, #ff7802 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 @mixin rad-grad-darkred {
     background: #F11124; /* Old browsers */
-    background: radial-gradient( #F11124 0%,#8F000F 100%); /* W3C */
+    background: radial-gradient(ellipse at center, #F11124 0%, #8F000F 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 @mixin rad-grad-lpink {
     background: #fcf8f7; /* Old browsers */
-    background: radial-gradient(#fcf8f7 0%,#fecdbe 100%); /* W3C */
+    background: radial-gradient(ellipse at center, #fcf8f7 0%, #fecdbe 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 @mixin rad-grad-lblue {
     background: #507CFF; /* Old browsers */
-    background: radial-gradient(#9EC5FF 0%,#507CFF 100%); /* W3C */
+    background: radial-gradient(ellipse at center, #9EC5FF 0%,#507CFF 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 @mixin rad-grad-lblue-alt {
-    background: linear-gradient(top,  #517DFF 0%,#6690FF 100%); /* W3C */
+    background: #517DFF; /* Old browsers */
+    background: linear-gradient(to bottom,  #517DFF 0%,#6690FF 100%); /* W3C */
 }
 
 @mixin fade {
