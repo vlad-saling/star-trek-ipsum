@@ -9,17 +9,10 @@ body {
     padding: 0;
 }
 
-body, button, input, select, textarea {
-    font-family: sans-serif;
+body {
+    font-family: Tahoma, Arial, Sans-Serif;
+    background: url(../img/starfield.jpg) center top no-repeat #000 scroll;
 }
-
-button, input, select, textarea {
-    font-size: 100%;
-    margin: 0;
-    vertical-align: baseline;
-}
-
-
 
 
 /* === variables =============================================== */
@@ -78,23 +71,6 @@ $st-light-pink-bg: #fecdbe;
 
 /* === actual style =============================================== */
 
-body {
-    font-family: Tahoma, Arial, Sans-Serif;
-    font-size: 18px;
-    background: #000000; /* Old browsers */
-    background: url(../img/starfield.jpg) center top no-repeat #000 scroll;
-}
-
-
-
-.clearfix:after {
-    content: ".";
-    visibility: hidden;
-    display: block;
-    height: 0;
-    clear: both;
-}
-
 .fright {
     float:right;
 }
@@ -104,12 +80,11 @@ a, a:hover, a:focus, a:visited {
 }
 
 header, footer {
-    
     font-variant: small-caps;
+}
     
     h1 {
         background-color: $st-dorange-bg;
-        display: block;
         height: 40px;
         font-size: 60px;
         text-align: right;
@@ -119,7 +94,7 @@ header, footer {
         @include rad-grad-darkorange;
 
         &:before, &:after {
-        @include hvstripes
+            @include hvstripes
         }
       
         &:before {
@@ -139,7 +114,6 @@ header, footer {
     }
 
     h2 {
-        display: block;
         height: 20px;
         font-size: 30px;
         line-height: 14px;
@@ -174,7 +148,7 @@ header, footer {
         padding: 0 10px;
         display: inline-block;
     }
-}
+
 
 header, footer {
 
@@ -207,7 +181,6 @@ textarea {
     box-sizing: border-box;
     color: #fff;
     background-color: transparent;
-    font-size: 0.8em;
 }
 
 p {margin: 0.5em 0; color: $st-dorange-txt}
@@ -343,20 +316,17 @@ p {margin: 0.5em 0; color: $st-dorange-txt}
 /* === responsive stuff === */
 
 @media only screen and (max-width: 880px) {
-    
-    header, footer {
-        h1, h2 {
-            font-size: 20px;
+    h1, h2 {
+        font-size: 20px;
+        height: 20px;
+        line-height: 14px;
+        
+        span {
             height: 20px;
-            line-height: 14px;
-            
-            span {
-                height: 20px;
-            }
-            
-            &:before, &:after {
-                display:none;
-            }
+        }
+        
+        &:before, &:after {
+            display:none;
         }
     }
 }
@@ -376,34 +346,28 @@ p {margin: 0.5em 0; color: $st-dorange-txt}
 }
 
 @media only screen and (max-width: 550px) {
-    
-    header, footer {
-        h1, h2 {
-            font-size: 14px;
-            height: 14px;
-            line-height: 8px;
-            
-            span {
-                height: 20px;
-            }
+    h1, h2 {
+        font-size: 14px;
+        height: 14px;
+        line-height: 8px;
+        
+        span {
+            height: 20px;
         }
     }
-    
 }
 
 @media only screen and (max-width: 550px) { 
-    header, footer {
-        h1, h2 {
+    h1, h2 {
+        height:auto;
+        text-align: center;
+        line-height: normal;
+        font-weight: bold;
+        
+        span {
+            margin-right: 0;
             height:auto;
-            text-align: center;
-            line-height: normal;
-            font-weight: bold;
-            
-            span {
-                margin-right: 0;
-                height:auto;
-                margin: 0 10px;
-            }
-        } 
-    }
+            margin: 0 10px;
+        }
+    } 
 }
