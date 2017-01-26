@@ -1,6 +1,56 @@
 /* === imports =============================================== */
 
-@import "grid"; 
+/* the grid */
+
+/* general container */
+
+.container {
+    margin: 0 auto;
+    padding: 0 1%;
+    box-sizing: border-box;
+    clear:none;
+    min-width: 320px;
+    max-width: 1012px;     /* main width */
+
+    &::after {
+        content: "";
+        display:block;
+        clear:both;
+    }
+}
+
+
+/* column container */
+
+.cc {
+  width: 100%;
+  float:left;
+}
+
+
+/* base grids */
+
+.c-1-1 {width: 100%}
+
+.c-2-1 {width: 50%}
+
+.c-3-1 {width: 33.3%}
+
+.c-3-2 {width: 66.6%}
+
+
+/* columns */
+
+[class^="c-"] {
+    float:left;
+    box-sizing: border-box;
+    min-height: 1px;
+    padding: 0.5% 1%;
+
+    @media only screen and (max-width: 768px) {
+        width: 100%;
+    }
+}
 
 
 html,
@@ -150,33 +200,16 @@ header, footer {
     }
 
 
-header, footer {
-
-    .c-1-1 {
-        background:none; 
-        text-align: center; 
-        box-shadow: none; 
-        border-radius: none;
-        
-        .twrapper {
-            display:inline-block;
-        }
-        
-    }
+.text-center {
+    text-align: center;
 }
 
-.c-1-1,
-.c-3-1,
-.c-3-2,
-.c-2-1 {
-    padding: 0.5% 1%;
-}
+
 
 textarea {
     width: 99%; 
     height: 300px;
     border: 0px;
-    border-radius: 10px;
     padding: 10px;
     box-sizing: border-box;
     color: #fff;
