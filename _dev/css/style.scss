@@ -109,20 +109,15 @@ $st-light-pink-bg: #fecdbe;
     background: linear-gradient(to bottom,  #517DFF 0%,#6690FF 100%); /* W3C */
 }
 
-@mixin fade {
-    opacity: 0.8;
-    transition: opacity 0.3s;
-    
-    &:hover {
-        opacity: 1;
-    }
-}
-
 
 /* === actual style =============================================== */
 
 .fright {
     float:right;
+}
+
+.text-center {
+    text-align: center;
 }
 
 a, a:hover, a:focus, a:visited {
@@ -200,9 +195,7 @@ header, footer {
     }
 
 
-.text-center {
-    text-align: center;
-}
+
 
 
 
@@ -291,15 +284,21 @@ p {margin: 0.5em 0; color: $st-dorange-txt}
     }
 
         
-    input[type=button] {
+    .gen {
         @include rad-grad-darkorange;
         text-align: right;
         padding: 10px 25px 0 0;
         border: 0px;
         width: 100%;
         border-radius: 0 0 0 25px;
-        @include fade;
         float:left;
+
+        opacity: 0.8;
+        transition: opacity 0.3s;
+        
+        &:hover {
+            opacity: 1;
+        }
     }
 }
 
