@@ -8,7 +8,6 @@
     margin: 0 auto;
     padding: 0 1%;
     box-sizing: border-box;
-    clear:none;
     min-width: 320px;
     max-width: 1012px;     /* main width */
 
@@ -70,7 +69,6 @@ body {
 $st-blue-purple: #9698f3;
 $st-dorange-bg: #ffad01;
 $st-lblue-bg: #507CFF;
-$st-dorange-txt: #E5D1B8;
 $st-old-pink-bg: #de616e;
 $st-light-pink-bg: #fecdbe;
 
@@ -120,79 +118,78 @@ $st-light-pink-bg: #fecdbe;
     text-align: center;
 }
 
-a, a:hover, a:focus, a:visited {
+a, 
+a:hover, 
+a:focus, 
+a:visited {
     color: $st-blue-purple;
 }
-
-header, footer {
-    font-variant: small-caps;
-}
     
-    h1 {
-        background-color: $st-dorange-bg;
-        height: 40px;
-        font-size: 60px;
-        text-align: right;
-        margin-bottom: 0px; 
-        border-radius: 20px;
-        line-height: 27px;
-        @include rad-grad-darkorange;
+h1 {
+    background-color: $st-dorange-bg;
+    height: 40px;
+    font-size: 60px;
+    text-align: right;
+    margin-bottom: 0px; 
+    border-radius: 20px;
+    line-height: 27px;
+    @include rad-grad-darkorange;
 
-        &:before, &:after {
-            @include hvstripes
-        }
-      
-        &:before {
-            float:left;
-            margin-left: 40px
-        }
-
-        &:after {
-            float: right;
-            margin-right: 40px
-        }
-
-        span {
-            margin-right: 30px;
-            height: 40px;
-        }
+    &:before, &:after {
+        @include hvstripes
+    }
+    
+    &:before {
+        float:left;
+        margin-left: 40px
     }
 
-    h2 {
-        height: 20px;
-        font-size: 30px;
-        line-height: 14px;
-        text-align: right;
-        font-weight: normal;
-        border-radius: 10px;
-        @include rad-grad-darkred;
-
-        &:before, &:after {
-        @include hvstripes(20px)
-        }
-
-        &:before {
-            float:left;
-            margin-left: 20px
-        }
-
-        &:after {
-            float: right;
-            margin-right: 20px
-        }
-        
-        span {
-            margin-right: 50px;
-            height: 20px;
-        }
+    &:after {
+        float: right;
+        margin-right: 40px
     }
 
     span {
-        color: $st-blue-purple;
-        background-color: #000;
-        padding: 0 10px;
-        display: inline-block;
+        margin-right: 30px;
+        height: 40px;
     }
+}
+
+h2 {
+    height: 20px;
+    font-size: 30px;
+    line-height: 14px;
+    text-align: right;
+    font-weight: normal;
+    border-radius: 10px;
+    @include rad-grad-darkred;
+
+    &:before, &:after {
+    @include hvstripes(20px)
+    }
+
+    &:before {
+        float:left;
+        margin-left: 20px
+    }
+
+    &:after {
+        float: right;
+        margin-right: 20px
+    }
+    
+    span {
+        margin-right: 50px;
+        height: 20px;
+    }
+}
+
+span {
+    color: $st-blue-purple;
+    background-color: #000;
+    padding: 0 10px;
+    display: inline-block;
+}
 
 
 
@@ -200,20 +197,21 @@ header, footer {
 
 
 textarea {
-    width: 99%; 
+    width: 100%; 
     height: 300px;
     border: 0px;
     padding: 10px;
     box-sizing: border-box;
     color: #fff;
     background-color: transparent;
+    font-size: 14px;
 }
 
-p {margin: 0.5em 0; color: $st-dorange-txt}
+p {
+    color: #fff;
+}
 
 .c-3-1  {
-
-    font-variant: small-caps;
     font-size: 20px;
     padding-right: 0px;
 
