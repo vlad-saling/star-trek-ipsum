@@ -292,7 +292,7 @@ p {margin: 0.5em 0; color: $st-dorange-txt}
         width: 100%;
         border-radius: 0 0 0 25px;
         float:left;
-
+        font-size: 20px;
         opacity: 0.8;
         transition: opacity 0.3s;
         
@@ -368,38 +368,19 @@ p {margin: 0.5em 0; color: $st-dorange-txt}
         display:none;
     }
 
-    .c-3-1 input[type=button] {
+    .gen {
         border-radius: 0px;
-    }
-
-    p {
-        line-height: 1.5em;
-    }
-}
-
-@media only screen and (max-width: 550px) {
-    h1, h2 {
-        font-size: 14px;
-        height: 14px;
-        line-height: 8px;
-        
-        span {
-            height: 20px;
-        }
     }
 }
 
 @media only screen and (max-width: 550px) { 
     h1, h2 {
-        height:auto;
+        font-size: 16px;
         text-align: center;
-        line-height: normal;
-        font-weight: bold;
+
         
         span {
             margin-right: 0;
-            height:auto;
-            margin: 0 10px;
         }
     } 
 }
