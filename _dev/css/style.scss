@@ -1,4 +1,12 @@
-/* === imports =============================================== */
+/* === variables =============================================== */
+
+$st-blue-purple: #9698f3;
+$st-dorange-bg: #fcf267;
+$st-lblue-bg: #6d92ff;
+$st-old-pink-bg: #de616e;
+$st-light-pink-bg: #fecdbe;
+$st-red-bg: #F11124;
+
 
 /* the grid */
 
@@ -19,39 +27,6 @@
 }
 
 
-/* column container */
-
-.cc {
-  width: 100%;
-  float:left;
-}
-
-
-/* base grids */
-
-.c-1-1 {width: 100%}
-
-.c-2-1 {width: 50%}
-
-.c-3-1 {width: 33.3%}
-
-.c-3-2 {width: 66.6%}
-
-
-/* columns */
-
-[class^="c-"] {
-    float:left;
-    box-sizing: border-box;
-    min-height: 1px;
-    padding: 0.5% 1%;
-
-    @media only screen and (max-width: 768px) {
-        width: 100%;
-    }
-}
-
-
 html,
 body {
     margin: 0;
@@ -64,14 +39,6 @@ body {
 }
 
 
-/* === variables =============================================== */
-
-$st-blue-purple: #9698f3;
-$st-dorange-bg: #fcf267;
-$st-lblue-bg: #507CFF;
-$st-old-pink-bg: #de616e;
-$st-light-pink-bg: #fecdbe;
-$st-red-bg: #F11124;
 
 /* === mixins =============================================== */
 
@@ -88,10 +55,13 @@ $st-red-bg: #F11124;
 
 
 a, 
-a:hover, 
 a:focus, 
 a:visited {
     color: $st-blue-purple;
+}
+
+a:hover {
+    color: #fff;
 }
     
 h1 {
@@ -173,43 +143,46 @@ textarea {
 }
 
 p {
-    color: #fff;
+    color: #ddd;
+    font-size: 14px;
+    padding: 0 30px;
 }
 
-.c-3-1  {
-    font-size: 20px;
-    padding-right: 0px;
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
 
-    .options-top, .options-bottom {
-        border-radius: 25px 0 0 0;
-        min-height: 50px;
-        margin-bottom: 5px;
-        background-color: $st-lblue-bg;
-    }
 
-    .options-bottom {
-        border-bottom-left-radius: 25% 100%;
-        min-height: 50px;
-        margin-bottom: 5px;
+.access {
+  font-size: 0px;
+}
+
+.options {
+    border-radius: 25px 0 0 0;
+    min-height: 20px;
+    margin-bottom: 5px;
+    background-color: $st-lblue-bg;
+    padding: 20px 5px 5px;
+    font-weight: bold;
+
+    @media only screen and (max-width: 768px) {
+         min-height: 0;
+         border-radius: 0;
+         padding: 5px;
     }
+}
+
+.controls  {
+    width: 33.3%;
+    padding-right: 0px;    
             
-    .c-1-1 {
+    .controls__sets {
         background-color: $st-light-pink-bg;
         margin-bottom: 5px;
-        padding-top: 1%;
-        padding-bottom: 1%;
-        font-size: 0.8em;
-        min-height: 25px;
-
-        
-        &.options {
-            padding: 0 0 0 5px;
-            display:block;
-            margin-bottom: 5px;
-            background-color: $st-lblue-bg;
-            font-size: 1em;
-            min-height: 28px;
-        }
+        padding: 5px;
+  
     
         input[type=checkbox] {
             border: 1px solid #ccc;
@@ -220,9 +193,6 @@ p {
             float:right
         }
 
-        &.radiobuttons {
-            min-height: 32px;
-        }
 
         .radiobutton {
             float:left;
@@ -235,8 +205,12 @@ p {
         }
 
         .radiogroup {
+            width: 50%;
+            float:left;
+
             @media only screen and (max-width: 768px) {
                 margin: 4px 0 2px;
+                width: 100%;
             }
         }
     }
@@ -249,7 +223,6 @@ p {
         border: 0px;
         width: 100%;
         border-radius: 0 0 0 25px;
-        float:left;
         font-size: 20px;
         opacity: 0.8;
         transition: opacity 0.3s;
@@ -263,10 +236,11 @@ p {
 
 
 
-.c-3-2 {
+.content {
     padding-left: 0;
+    width: 66.6%;
 
-    .content-top {
+    .content__top {
         background-color: $st-lblue-bg;
         height: 20px;
         margin-bottom: 5px;
@@ -286,23 +260,24 @@ p {
     }
 }
 
-.sharelink,
-.sharelink:visited {
-    
-    padding: 1px 6px;
-    border-radius: 8px;
-    display: inline-block;
-
-    
-    &:hover {
-        color: #fff;
-    }
+footer {
+    float:left;
 }
 
 
 
 
-/* === responsive stuff === */
+.controls, .content {
+    float:left;
+    box-sizing: border-box;
+    min-height: 1px;
+
+
+    @media only screen and (max-width: 768px) {
+        width: 100%;
+    }
+}
+
 
 @media only screen and (max-width: 880px) {
     h1, h2 {
