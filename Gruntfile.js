@@ -2,30 +2,9 @@
 
 module.exports = function(grunt) {
 
-  // var jsApp = [
-  //   'js/the-script.js',
-  // ]
-
-  // if (typeof(target) == "undefined") {
-  //   grunt.fail.warn("A target must be specified using the --target=[target] option. Valid targets are \"dev\" and \"prod\".");
-  // }
-
   
 
   grunt.initConfig({
-
-
-    jshint: {
-      dev: [
-        '_dev/js/the-script.js',
-      ],
-      prod: [
-        '_prod/js/app.js',
-      ],
-      options: {
-        jshintrc: '.jshintrc',
-      },
-    },
 
 
     sass: {
@@ -163,7 +142,6 @@ module.exports = function(grunt) {
     
   });
 
-  grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-watch');

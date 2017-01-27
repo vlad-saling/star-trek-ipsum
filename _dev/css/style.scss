@@ -146,6 +146,10 @@ p {
     color: #ddd;
     font-size: 14px;
     padding: 0 30px;
+
+    @media only screen and (max-width: 768px) {
+        padding: 0;
+    }
 }
 
 fieldset {
@@ -292,26 +296,17 @@ footer {
         &:before, &:after {
             display:none;
         }
-    }
+    }   
 }
 
 @media only screen and (max-width: 768px) {
-    .content-top, .options-top {
+    .content__top {
         display:none;
-    }
-
-    .gen {
-        border-radius: 0px;
     }
 }
 
 @media only screen and (max-width: 550px) { 
     h1, h2 {
         font-size: 16px;
-
-        
-        span {
-            margin-right: 0;
-        }
     } 
 }
