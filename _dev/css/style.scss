@@ -1,6 +1,55 @@
 /* === imports =============================================== */
 
-@import "grid"; 
+/* the grid */
+
+/* general container */
+
+.container {
+    margin: 0 auto;
+    padding: 0 1%;
+    box-sizing: border-box;
+    min-width: 320px;
+    max-width: 960px;     /* main width */
+
+    &::after {
+        content: "";
+        display:block;
+        clear:both;
+    }
+}
+
+
+/* column container */
+
+.cc {
+  width: 100%;
+  float:left;
+}
+
+
+/* base grids */
+
+.c-1-1 {width: 100%}
+
+.c-2-1 {width: 50%}
+
+.c-3-1 {width: 33.3%}
+
+.c-3-2 {width: 66.6%}
+
+
+/* columns */
+
+[class^="c-"] {
+    float:left;
+    box-sizing: border-box;
+    min-height: 1px;
+    padding: 0.5% 1%;
+
+    @media only screen and (max-width: 768px) {
+        width: 100%;
+    }
+}
 
 
 html,
@@ -9,27 +58,20 @@ body {
     padding: 0;
 }
 
-body, button, input, select, textarea {
-    font-family: sans-serif;
+body {
+    font-family: Tahoma, Arial, Sans-Serif;
+    background: url(../img/starfield.jpg) center top no-repeat #000 scroll;
 }
-
-button, input, select, textarea {
-    font-size: 100%;
-    margin: 0;
-    vertical-align: baseline;
-}
-
-
 
 
 /* === variables =============================================== */
 
 $st-blue-purple: #9698f3;
-$st-dorange-bg: #ffad01;
+$st-dorange-bg: #fcf267;
 $st-lblue-bg: #507CFF;
-$st-dorange-txt: #E5D1B8;
 $st-old-pink-bg: #de616e;
 $st-light-pink-bg: #fecdbe;
+$st-red-bg: #F11124;
 
 /* === mixins =============================================== */
 
@@ -41,180 +83,100 @@ $st-light-pink-bg: #fecdbe;
     background-color: #000;
 }
 
-@mixin rad-grad-darkorange {
-    background: #fce667; /* Old browsers */
-    background: radial-gradient(ellipse at center, #fce667 0%, #ff7802 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-}
-
-@mixin rad-grad-darkred {
-    background: #F11124; /* Old browsers */
-    background: radial-gradient(ellipse at center, #F11124 0%, #8F000F 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-}
-
-@mixin rad-grad-lpink {
-    background: #fcf8f7; /* Old browsers */
-    background: radial-gradient(ellipse at center, #fcf8f7 0%, #fecdbe 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-}
-
-@mixin rad-grad-lblue {
-    background: #507CFF; /* Old browsers */
-    background: radial-gradient(ellipse at center, #9EC5FF 0%,#507CFF 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-}
-
-@mixin rad-grad-lblue-alt {
-    background: #517DFF; /* Old browsers */
-    background: linear-gradient(to bottom,  #517DFF 0%,#6690FF 100%); /* W3C */
-}
-
-@mixin fade {
-    opacity: 0.8;
-    transition: opacity 0.3s;
-    
-    &:hover {
-        opacity: 1;
-    }
-}
-
 
 /* === actual style =============================================== */
 
-body {
-    font-family: Tahoma, Arial, Sans-Serif;
-    font-size: 18px;
-    background: #000000; /* Old browsers */
-    background: url(../img/starfield.jpg) center top no-repeat #000 scroll;
-}
 
-
-
-.clearfix:after {
-    content: ".";
-    visibility: hidden;
-    display: block;
-    height: 0;
-    clear: both;
-}
-
-.fright {
-    float:right;
-}
-
-a, a:hover, a:focus, a:visited {
+a, 
+a:hover, 
+a:focus, 
+a:visited {
     color: $st-blue-purple;
 }
-
-header, footer {
     
-    font-variant: small-caps;
-    
-    h1 {
-        background-color: $st-dorange-bg;
-        display: block;
-        height: 40px;
-        font-size: 60px;
-        text-align: right;
-        margin-bottom: 0px; 
-        border-radius: 20px;
-        line-height: 27px;
-        @include rad-grad-darkorange;
+h1 {
+    background-color: $st-dorange-bg;
+    font-size: 60px;
+    margin-bottom: 0px; 
+    border-radius: 20px;
+    line-height: 27px;
+    background: $st-dorange-bg;
 
-        &:before, &:after {
+    &:before, &:after {
         @include hvstripes
-        }
-      
-        &:before {
-            float:left;
-            margin-left: 40px
-        }
-
-        &:after {
-            float: right;
-            margin-right: 40px
-        }
-
-        span {
-            margin-right: 30px;
-            height: 40px;
-        }
+    }
+    
+    &:before {
+        float:left;
+        margin-left: 40px
     }
 
-    h2 {
-        display: block;
-        height: 20px;
-        font-size: 30px;
-        line-height: 14px;
-        text-align: right;
-        font-weight: normal;
-        border-radius: 10px;
-        @include rad-grad-darkred;
-
-        &:before, &:after {
-        @include hvstripes(20px)
-        }
-
-        &:before {
-            float:left;
-            margin-left: 20px
-        }
-
-        &:after {
-            float: right;
-            margin-right: 20px
-        }
-        
-        span {
-            margin-right: 50px;
-            height: 20px;
-        }
+    &:after {
+        float: right;
+        margin-right: 40px
     }
 
     span {
-        color: $st-blue-purple;
-        background-color: #000;
-        padding: 0 10px;
-        display: inline-block;
+        margin-left: 30px;
+        height: 40px;
     }
 }
 
-header, footer {
+h2 {
+    font-size: 30px;
+    line-height: 14px;
+    font-weight: normal;
+    border-radius: 10px;
+    background-color: $st-red-bg;
 
-    .c-1-1 {
-        background:none; 
-        text-align: center; 
-        box-shadow: none; 
-        border-radius: none;
-        
-        .twrapper {
-            display:inline-block;
-        }
-        
+    &:before, &:after {
+        @include hvstripes(20px)
+    }
+
+    &:before {
+        float:left;
+        margin-left: 20px
+    }
+
+    &:after {
+        float: right;
+        margin-right: 20px
+    }
+    
+    span {
+        margin-left: 50px;
+        height: 20px;
     }
 }
 
-.c-1-1,
-.c-3-1,
-.c-3-2,
-.c-2-1 {
-    padding: 0.5% 1%;
+span {
+    color: $st-blue-purple;
+    background-color: #000;
+    padding: 0 10px;
+    display: inline-block;
 }
+
+
+
+
+
 
 textarea {
-    width: 99%; 
+    width: 100%; 
     height: 300px;
     border: 0px;
-    border-radius: 10px;
     padding: 10px;
     box-sizing: border-box;
     color: #fff;
     background-color: transparent;
-    font-size: 0.8em;
+    font-size: 14px;
 }
 
-p {margin: 0.5em 0; color: $st-dorange-txt}
+p {
+    color: #fff;
+}
 
 .c-3-1  {
-
-    font-variant: small-caps;
     font-size: 20px;
     padding-right: 0px;
 
@@ -222,7 +184,7 @@ p {margin: 0.5em 0; color: $st-dorange-txt}
         border-radius: 25px 0 0 0;
         min-height: 50px;
         margin-bottom: 5px;
-        @include rad-grad-lblue;
+        background-color: $st-lblue-bg;
     }
 
     .options-bottom {
@@ -232,24 +194,19 @@ p {margin: 0.5em 0; color: $st-dorange-txt}
     }
             
     .c-1-1 {
-        @include rad-grad-lpink;
+        background-color: $st-light-pink-bg;
         margin-bottom: 5px;
         padding-top: 1%;
         padding-bottom: 1%;
         font-size: 0.8em;
         min-height: 25px;
 
-        @media only screen and (max-width: 768px) {
-            padding-top: 2%;
-            padding-bottom: 2%;
-        }
-
         
         &.options {
             padding: 0 0 0 5px;
             display:block;
             margin-bottom: 5px;
-            @include rad-grad-lblue;
+            background-color: $st-lblue-bg;
             font-size: 1em;
             min-height: 28px;
         }
@@ -285,24 +242,32 @@ p {margin: 0.5em 0; color: $st-dorange-txt}
     }
 
         
-    input[type=button] {
-        @include rad-grad-darkorange;
+    .gen {
+        background: $st-dorange-bg;
         text-align: right;
         padding: 10px 25px 0 0;
         border: 0px;
         width: 100%;
         border-radius: 0 0 0 25px;
-        @include fade;
         float:left;
+        font-size: 20px;
+        opacity: 0.8;
+        transition: opacity 0.3s;
+        
+        &:hover {
+            opacity: 1;
+            cursor: pointer;
+        }
     }
 }
+
 
 
 .c-3-2 {
     padding-left: 0;
 
     .content-top {
-        @include rad-grad-lblue-alt;
+        background-color: $st-lblue-bg;
         height: 20px;
         margin-bottom: 5px;
         margin-right: 25px;
@@ -313,7 +278,7 @@ p {margin: 0.5em 0; color: $st-dorange-txt}
             display:block;
             height: 20px;
             width: 20px;
-            @include rad-grad-lblue-alt;
+            background-color: $st-lblue-bg;
             border-right: 5px solid #000;
             border-radius: 0 50% 50% 0;
             margin-right: -30px;
@@ -323,17 +288,14 @@ p {margin: 0.5em 0; color: $st-dorange-txt}
 
 .sharelink,
 .sharelink:visited {
-    @include rad-grad-lblue-alt;
-    color: #000;
-    text-decoration: none;
-    padding: 3px 9px;
-    border-radius: 14px;
-    margin-bottom: 8px;
+    
+    padding: 1px 6px;
+    border-radius: 8px;
     display: inline-block;
-    transition: color .3s;
+
     
     &:hover {
-        color: #eee;
+        color: #fff;
     }
 }
 
@@ -343,20 +305,17 @@ p {margin: 0.5em 0; color: $st-dorange-txt}
 /* === responsive stuff === */
 
 @media only screen and (max-width: 880px) {
-    
-    header, footer {
-        h1, h2 {
-            font-size: 20px;
+    h1, h2 {
+        font-size: 20px;
+        line-height: 14px;
+        
+        span {
             height: 20px;
-            line-height: 14px;
-            
-            span {
-                height: 20px;
-            }
-            
-            &:before, &:after {
-                display:none;
-            }
+            margin-left: 30px;
+        }
+        
+        &:before, &:after {
+            display:none;
         }
     }
 }
@@ -366,44 +325,18 @@ p {margin: 0.5em 0; color: $st-dorange-txt}
         display:none;
     }
 
-    .c-3-1 input[type=button] {
+    .gen {
         border-radius: 0px;
     }
-
-    p {
-        line-height: 1.5em;
-    }
-}
-
-@media only screen and (max-width: 550px) {
-    
-    header, footer {
-        h1, h2 {
-            font-size: 14px;
-            height: 14px;
-            line-height: 8px;
-            
-            span {
-                height: 20px;
-            }
-        }
-    }
-    
 }
 
 @media only screen and (max-width: 550px) { 
-    header, footer {
-        h1, h2 {
-            height:auto;
-            text-align: center;
-            line-height: normal;
-            font-weight: bold;
-            
-            span {
-                margin-right: 0;
-                height:auto;
-                margin: 0 10px;
-            }
-        } 
-    }
+    h1, h2 {
+        font-size: 16px;
+
+        
+        span {
+            margin-right: 0;
+        }
+    } 
 }

@@ -53,7 +53,7 @@ module.exports = function(grunt) {
     watch: {
       sass: {
         files: ['_dev/css/*.scss'],
-        tasks: ['sass:dev'],
+        tasks: ['production'],
         options: {
           spawn: false,
         }
