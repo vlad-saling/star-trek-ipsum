@@ -67,7 +67,7 @@ body {
 /* === variables =============================================== */
 
 $st-blue-purple: #9698f3;
-$st-dorange-bg: #ffad01;
+$st-dorange-bg: #fcf267;
 $st-lblue-bg: #507CFF;
 $st-old-pink-bg: #de616e;
 $st-light-pink-bg: #fecdbe;
@@ -83,53 +83,35 @@ $st-light-pink-bg: #fecdbe;
 }
 
 @mixin rad-grad-darkorange {
-    background: #fce667; /* Old browsers */
-    background: radial-gradient(ellipse at center, #fce667 0%, #ff7802 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: $st-dorange-bg; /* Old browsers */
 }
 
 @mixin rad-grad-darkred {
     background: #F11124; /* Old browsers */
-    background: radial-gradient(ellipse at center, #F11124 0%, #8F000F 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 @mixin rad-grad-lpink {
-    background: #fcf8f7; /* Old browsers */
-    background: radial-gradient(ellipse at center, #fcf8f7 0%, #fecdbe 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: #ffdcd3; /* Old browsers */
 }
 
 @mixin rad-grad-lblue {
     background: #507CFF; /* Old browsers */
-    background: radial-gradient(ellipse at center, #9EC5FF 0%,#507CFF 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-}
-
-@mixin rad-grad-lblue-alt {
-    background: #517DFF; /* Old browsers */
-    background: linear-gradient(to bottom,  #517DFF 0%,#6690FF 100%); /* W3C */
 }
 
 
 /* === actual style =============================================== */
 
-.fright {
-    float:right;
-}
-
-.text-center {
-    text-align: center;
-}
 
 a, 
 a:hover, 
 a:focus, 
 a:visited {
-    color: $st-blue-purple;
+    color: $st-dorange-bg;
 }
     
 h1 {
     background-color: $st-dorange-bg;
-    height: 40px;
     font-size: 60px;
-    text-align: right;
     margin-bottom: 0px; 
     border-radius: 20px;
     line-height: 27px;
@@ -150,22 +132,20 @@ h1 {
     }
 
     span {
-        margin-right: 30px;
+        margin-left: 30px;
         height: 40px;
     }
 }
 
 h2 {
-    height: 20px;
     font-size: 30px;
     line-height: 14px;
-    text-align: right;
     font-weight: normal;
     border-radius: 10px;
     @include rad-grad-darkred;
 
     &:before, &:after {
-    @include hvstripes(20px)
+        @include hvstripes(20px)
     }
 
     &:before {
@@ -179,7 +159,7 @@ h2 {
     }
     
     span {
-        margin-right: 50px;
+        margin-left: 50px;
         height: 20px;
     }
 }
@@ -235,11 +215,6 @@ p {
         padding-bottom: 1%;
         font-size: 0.8em;
         min-height: 25px;
-
-        @media only screen and (max-width: 768px) {
-            padding-top: 2%;
-            padding-bottom: 2%;
-        }
 
         
         &.options {
@@ -305,7 +280,7 @@ p {
     padding-left: 0;
 
     .content-top {
-        @include rad-grad-lblue-alt;
+        @include rad-grad-lblue;
         height: 20px;
         margin-bottom: 5px;
         margin-right: 25px;
@@ -316,7 +291,7 @@ p {
             display:block;
             height: 20px;
             width: 20px;
-            @include rad-grad-lblue-alt;
+            @include rad-grad-lblue;
             border-right: 5px solid #000;
             border-radius: 0 50% 50% 0;
             margin-right: -30px;
@@ -326,17 +301,14 @@ p {
 
 .sharelink,
 .sharelink:visited {
-    @include rad-grad-lblue-alt;
-    color: #000;
-    text-decoration: none;
-    padding: 3px 9px;
-    border-radius: 14px;
-    margin-bottom: 8px;
+    
+    padding: 1px 6px;
+    border-radius: 8px;
     display: inline-block;
-    transition: color .3s;
+
     
     &:hover {
-        color: #eee;
+        color: #fff;
     }
 }
 
@@ -348,11 +320,11 @@ p {
 @media only screen and (max-width: 880px) {
     h1, h2 {
         font-size: 20px;
-        height: 20px;
         line-height: 14px;
         
         span {
             height: 20px;
+            margin-left: 30px;
         }
         
         &:before, &:after {
@@ -374,7 +346,6 @@ p {
 @media only screen and (max-width: 550px) { 
     h1, h2 {
         font-size: 16px;
-        text-align: center;
 
         
         span {
