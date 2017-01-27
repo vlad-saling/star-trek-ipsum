@@ -71,6 +71,7 @@ $st-dorange-bg: #fcf267;
 $st-lblue-bg: #507CFF;
 $st-old-pink-bg: #de616e;
 $st-light-pink-bg: #fecdbe;
+$st-red-bg: #F11124;
 
 /* === mixins =============================================== */
 
@@ -82,22 +83,6 @@ $st-light-pink-bg: #fecdbe;
     background-color: #000;
 }
 
-@mixin rad-grad-darkorange {
-    background: $st-dorange-bg; /* Old browsers */
-}
-
-@mixin rad-grad-darkred {
-    background: #F11124; /* Old browsers */
-}
-
-@mixin rad-grad-lpink {
-    background: #ffdcd3; /* Old browsers */
-}
-
-@mixin rad-grad-lblue {
-    background: #507CFF; /* Old browsers */
-}
-
 
 /* === actual style =============================================== */
 
@@ -106,7 +91,7 @@ a,
 a:hover, 
 a:focus, 
 a:visited {
-    color: $st-dorange-bg;
+    color: $st-blue-purple;
 }
     
 h1 {
@@ -115,7 +100,7 @@ h1 {
     margin-bottom: 0px; 
     border-radius: 20px;
     line-height: 27px;
-    @include rad-grad-darkorange;
+    background: $st-dorange-bg;
 
     &:before, &:after {
         @include hvstripes
@@ -142,7 +127,7 @@ h2 {
     line-height: 14px;
     font-weight: normal;
     border-radius: 10px;
-    @include rad-grad-darkred;
+    background-color: $st-red-bg;
 
     &:before, &:after {
         @include hvstripes(20px)
@@ -199,7 +184,7 @@ p {
         border-radius: 25px 0 0 0;
         min-height: 50px;
         margin-bottom: 5px;
-        @include rad-grad-lblue;
+        background-color: $st-lblue-bg;
     }
 
     .options-bottom {
@@ -209,7 +194,7 @@ p {
     }
             
     .c-1-1 {
-        @include rad-grad-lpink;
+        background-color: $st-light-pink-bg;
         margin-bottom: 5px;
         padding-top: 1%;
         padding-bottom: 1%;
@@ -221,7 +206,7 @@ p {
             padding: 0 0 0 5px;
             display:block;
             margin-bottom: 5px;
-            @include rad-grad-lblue;
+            background-color: $st-lblue-bg;
             font-size: 1em;
             min-height: 28px;
         }
@@ -258,7 +243,7 @@ p {
 
         
     .gen {
-        @include rad-grad-darkorange;
+        background: $st-dorange-bg;
         text-align: right;
         padding: 10px 25px 0 0;
         border: 0px;
@@ -271,16 +256,18 @@ p {
         
         &:hover {
             opacity: 1;
+            cursor: pointer;
         }
     }
 }
+
 
 
 .c-3-2 {
     padding-left: 0;
 
     .content-top {
-        @include rad-grad-lblue;
+        background-color: $st-lblue-bg;
         height: 20px;
         margin-bottom: 5px;
         margin-right: 25px;
@@ -291,7 +278,7 @@ p {
             display:block;
             height: 20px;
             width: 20px;
-            @include rad-grad-lblue;
+            background-color: $st-lblue-bg;
             border-right: 5px solid #000;
             border-radius: 0 50% 50% 0;
             margin-right: -30px;
