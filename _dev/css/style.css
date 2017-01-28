@@ -1,4 +1,4 @@
-/* === imports =============================================== */
+/* === variables =============================================== */
 /* the grid */
 /* general container */
 .container {
@@ -13,34 +13,6 @@
     display: block;
     clear: both; }
 
-/* column container */
-.cc {
-  width: 100%;
-  float: left; }
-
-/* base grids */
-.c-1-1 {
-  width: 100%; }
-
-.c-2-1 {
-  width: 50%; }
-
-.c-3-1 {
-  width: 33.3%; }
-
-.c-3-2 {
-  width: 66.6%; }
-
-/* columns */
-[class^="c-"] {
-  float: left;
-  box-sizing: border-box;
-  min-height: 1px;
-  padding: 0.5% 1%; }
-  @media only screen and (max-width: 768px) {
-    [class^="c-"] {
-      width: 100%; } }
-
 html,
 body {
   margin: 0;
@@ -48,16 +20,17 @@ body {
 
 body {
   font-family: Tahoma, Arial, Sans-Serif;
-  background: url(../img/starfield.jpg) center top no-repeat #000 scroll; }
+  background-color: #000; }
 
-/* === variables =============================================== */
 /* === mixins =============================================== */
 /* === actual style =============================================== */
 a,
-a:hover,
 a:focus,
 a:visited {
   color: #9698f3; }
+
+a:hover {
+  color: #fff; }
 
 h1 {
   background-color: #fcf267;
@@ -65,8 +38,7 @@ h1 {
   margin-bottom: 0px;
   border-radius: 20px;
   line-height: 27px;
-  background: #fcf267;
-  /* Old browsers */ }
+  background: #fcf267; }
   h1:before, h1:after {
     content: " ";
     display: block;
@@ -88,8 +60,7 @@ h2 {
   line-height: 14px;
   font-weight: normal;
   border-radius: 10px;
-  background: #F11124;
-  /* Old browsers */ }
+  background-color: #F11124; }
   h2:before, h2:after {
     content: " ";
     display: block;
@@ -123,100 +94,104 @@ textarea {
   font-size: 14px; }
 
 p {
-  color: #fff; }
+  color: #ddd;
+  font-size: 14px;
+  padding: 0 30px; }
+  @media only screen and (max-width: 768px) {
+    p {
+      padding: 0; } }
 
-.c-3-1 {
-  font-size: 20px;
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0; }
+
+.access {
+  font-size: 0px; }
+
+.options {
+  border-radius: 25px 0 0 0;
+  min-height: 20px;
+  margin-bottom: 5px;
+  background-color: #6d92ff;
+  padding: 20px 5px 5px;
+  font-weight: bold; }
+  @media only screen and (max-width: 768px) {
+    .options {
+      min-height: 0;
+      border-radius: 0;
+      padding: 5px; } }
+
+.controls {
+  width: 33.3%;
   padding-right: 0px; }
-  .c-3-1 .options-top, .c-3-1 .options-bottom {
-    border-radius: 25px 0 0 0;
-    min-height: 50px;
+  .controls .controls__sets {
+    background-color: #fecdbe;
     margin-bottom: 5px;
-    background: #507CFF;
-    /* Old browsers */ }
-  .c-3-1 .options-bottom {
-    border-bottom-left-radius: 25% 100%;
-    min-height: 50px;
-    margin-bottom: 5px; }
-  .c-3-1 .c-1-1 {
-    background: #ffdcd3;
-    /* Old browsers */
-    margin-bottom: 5px;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    font-size: 0.8em;
-    min-height: 25px; }
-    .c-3-1 .c-1-1.options {
-      padding: 0 0 0 5px;
-      display: block;
-      margin-bottom: 5px;
-      background: #507CFF;
-      /* Old browsers */
-      font-size: 1em;
-      min-height: 28px; }
-    .c-3-1 .c-1-1 input[type=checkbox] {
+    padding: 5px; }
+    .controls .controls__sets input[type=checkbox] {
       border: 1px solid #ccc;
       margin-top: 3px; }
-    .c-3-1 .c-1-1 input, .c-3-1 .c-1-1 select {
+    .controls .controls__sets input, .controls .controls__sets select {
       float: right; }
-    .c-3-1 .c-1-1.radiobuttons {
-      min-height: 32px; }
-    .c-3-1 .c-1-1 .radiobutton {
+    .controls .controls__sets .radiobutton {
       float: left;
       background: transparent;
       margin: 5px 4px 0 0; }
       @media only screen and (max-width: 768px) {
-        .c-3-1 .c-1-1 .radiobutton {
+        .controls .controls__sets .radiobutton {
           margin-top: 3px; } }
-    @media only screen and (max-width: 768px) {
-      .c-3-1 .c-1-1 .radiogroup {
-        margin: 4px 0 2px; } }
-  .c-3-1 .gen {
+    .controls .controls__sets .radiogroup {
+      width: 50%;
+      float: left; }
+      @media only screen and (max-width: 768px) {
+        .controls .controls__sets .radiogroup {
+          margin: 4px 0 2px;
+          width: 100%; } }
+  .controls .gen {
     background: #fcf267;
-    /* Old browsers */
     text-align: right;
     padding: 10px 25px 0 0;
     border: 0px;
     width: 100%;
     border-radius: 0 0 0 25px;
-    float: left;
     font-size: 20px;
     opacity: 0.8;
     transition: opacity 0.3s; }
-    .c-3-1 .gen:hover {
+    .controls .gen:hover {
       opacity: 1;
       cursor: pointer; }
 
-.c-3-2 {
-  padding-left: 0; }
-  .c-3-2 .content-top {
-    background: #507CFF;
-    /* Old browsers */
+.content {
+  padding-left: 0;
+  width: 66.6%; }
+  .content .content__top {
+    background-color: #6d92ff;
     height: 20px;
     margin-bottom: 5px;
     margin-right: 25px; }
-    .c-3-2 .content-top:after {
+    .content .content__top:after {
       float: right;
       content: " ";
       display: block;
       height: 20px;
       width: 20px;
-      background: #507CFF;
-      /* Old browsers */
+      background-color: #6d92ff;
       border-right: 5px solid #000;
       border-radius: 0 50% 50% 0;
       margin-right: -30px; }
 
-.sharelink,
-.sharelink:visited {
-  padding: 1px 6px;
-  border-radius: 8px;
-  display: inline-block; }
-  .sharelink:hover,
-  .sharelink:visited:hover {
-    color: #fff; }
+footer {
+  float: left; }
 
-/* === responsive stuff === */
+.controls, .content {
+  float: left;
+  box-sizing: border-box;
+  min-height: 1px; }
+  @media only screen and (max-width: 768px) {
+    .controls, .content {
+      width: 100%; } }
+
 @media only screen and (max-width: 880px) {
   h1, h2 {
     font-size: 20px;
@@ -228,13 +203,9 @@ p {
       display: none; } }
 
 @media only screen and (max-width: 768px) {
-  .content-top, .options-top {
-    display: none; }
-  .gen {
-    border-radius: 0px; } }
+  .content__top {
+    display: none; } }
 
 @media only screen and (max-width: 550px) {
   h1, h2 {
-    font-size: 16px; }
-    h1 span, h2 span {
-      margin-right: 0; } }
+    font-size: 16px; } }

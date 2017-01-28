@@ -11,7 +11,6 @@ module.exports = function(grunt) {
       dev: {
         options: {
           style: 'expanded',
-          require: 'sass-css-importer',
         },
         files: {
           '_dev/css/style.css': '_dev/css/style.scss',
@@ -20,7 +19,6 @@ module.exports = function(grunt) {
       prod: {
         options: {
           outputStyle: 'compressed',
-          require: 'sass-css-importer',
           "sourcemap=none": ''
         },
         files: {
@@ -30,16 +28,9 @@ module.exports = function(grunt) {
     },
 
     watch: {
-      sass: {
-        files: ['_dev/css/*.scss'],
+      default: {
+        files: ['_dev/**/*'],
         tasks: ['production'],
-        options: {
-          spawn: false,
-        }
-      },
-      processhtml: {
-        files: ['_dev/index.html.tmpl'],
-        tasks: ['processhtml'],
         options: {
           spawn: false,
         }

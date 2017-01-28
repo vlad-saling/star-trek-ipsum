@@ -8,9 +8,19 @@ $st-light-pink-bg: #fecdbe;
 $st-red-bg: #F11124;
 
 
-/* the grid */
-
 /* general container */
+
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Tahoma, Arial, Sans-Serif;
+    background-color: #000;
+}
 
 .container {
     margin: 0 auto;
@@ -25,20 +35,6 @@ $st-red-bg: #F11124;
         clear:both;
     }
 }
-
-
-html,
-body {
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: Tahoma, Arial, Sans-Serif;
-    background-color: #000;
-}
-
-
 
 /* === mixins =============================================== */
 
