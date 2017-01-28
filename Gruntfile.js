@@ -83,18 +83,6 @@ module.exports = function(grunt) {
 
 
     copy: {
-      img: {
-        expand: true,
-        cwd: '_dev',
-        src: 'img/**',
-        dest: '_prod/',
-      },
-      content: {
-        expand: true,
-        cwd: '_dev',
-        src: 'content/content.json',
-        dest: '_prod/',
-      },
       stuff: {
         expand: true,
         cwd: '_dev',
