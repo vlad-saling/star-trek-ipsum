@@ -59,11 +59,6 @@ module.exports = function(grunt) {
 
 
     processhtml: {
-      dev: {
-        files: {
-          '_dev/index.html': ['_dev/index.html.tmpl']
-        }
-      },
       prod: {
         files: {
           '_prod/index.html': ['_dev/index.html.tmpl']
