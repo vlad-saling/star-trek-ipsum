@@ -2,10 +2,7 @@
 
 module.exports = function(grunt) {
 
-  
-
   grunt.initConfig({
-
 
     sass: {
       dev: {
@@ -57,7 +54,6 @@ module.exports = function(grunt) {
       }
     },
 
-
     processhtml: {
       prod: {
         files: {
@@ -65,8 +61,6 @@ module.exports = function(grunt) {
         }
       }
   },
-
-
 
     copy: {
       stuff: {
@@ -76,8 +70,6 @@ module.exports = function(grunt) {
         dest: '_prod/',
       }
     },
-
-    
 
     htmlmin: {                                    
       dist: {                                     

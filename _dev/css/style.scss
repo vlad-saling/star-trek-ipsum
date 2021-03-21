@@ -157,6 +157,7 @@ fieldset {
 
 .access {
   font-size: 0px;
+  line-height: 0;
 }
 
 .options {
@@ -182,31 +183,49 @@ fieldset {
         background-color: $st-light-pink-bg;
         margin-bottom: 5px;
         padding: 5px;
+        display: flex;
+
+        @media only screen and (max-width: 768px) {
+            line-height: 48px;
+        }
+
+        > input,
+        > select {
+            margin-left: auto;
+        }
+
+        > select {
+            @media only screen and (max-width: 768px) {
+                height: 48px;
+                width: 48px;
+            }
+        }
   
     
         input[type=checkbox] {
             border: 1px solid #ccc;
             margin-top: 3px;
-        }
-          
-        input, select {
-            float:right
-        }
 
+            @media only screen and (max-width: 768px) {
+                height: 48px;
+                width: 48px;
+            }
+        }
 
         .radiobutton {
-            float:left;
             background: transparent;
             margin: 5px 4px 0 0;
 
             @media only screen and (max-width: 768px) {
                 margin-top: 3px;
+                height: 48px;
+                width: 48px;
             }
         }
 
         .radiogroup {
             width: 50%;
-            float:left;
+            display: flex;
 
             @media only screen and (max-width: 768px) {
                 margin: 4px 0 2px;
