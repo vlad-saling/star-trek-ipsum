@@ -10,7 +10,7 @@ module.exports = function(grunt) {
           style: 'expanded',
         },
         files: {
-          '_dev/css/style.css': '_dev/css/style.scss',
+          'dev/css/style.css': 'dev/css/style.scss',
         }
       },
       prod: {
@@ -19,14 +19,14 @@ module.exports = function(grunt) {
           "sourcemap=none": ''
         },
         files: {
-          '_prod/css/style.css': '_dev/css/style.scss',
+          'docs/css/style.css': 'dev/css/style.scss',
         }
       }
     },
 
     watch: {
       default: {
-        files: ['_dev/**/*'],
+        files: ['dev/**/*'],
         tasks: ['production'],
         options: {
           spawn: false,
@@ -41,7 +41,7 @@ module.exports = function(grunt) {
       },
       build: {
         files: {
-          '_dev/js/the-script.min.js': ['_dev/js/the-script.js']
+          'dev/js/the-script.min.js': ['dev/js/the-script.js']
         }
       }
     },
@@ -49,15 +49,15 @@ module.exports = function(grunt) {
     //merging everything together
     concat: {
       libs: {
-        src: ['_dev/js/the-script.min.js'],
-        dest: '_prod/js/app.js'
+        src: ['dev/js/the-script.min.js'],
+        dest: 'docs/js/app.js'
       }
     },
 
     processhtml: {
       prod: {
         files: {
-          '_prod/index.html': ['_dev/index.html.tmpl']
+          'docs/index.html': ['dev/index.html.tmpl']
         }
       }
   },
@@ -65,9 +65,9 @@ module.exports = function(grunt) {
     copy: {
       stuff: {
         expand: true,
-        cwd: '_dev',
+        cwd: 'dev',
         src: 'robots.txt',
-        dest: '_prod/',
+        dest: 'docs/',
       }
     },
 
@@ -78,7 +78,7 @@ module.exports = function(grunt) {
           collapseWhitespace: true
         },
         files: {                                   
-          '_prod/index.html': '_prod/index.html'   
+          'docs/index.html': 'docs/index.html'   
 
         }
       }
@@ -90,7 +90,7 @@ module.exports = function(grunt) {
                 stripWhitespace: true
             },
             files: {
-                "_dev/content/content.json" : "_dev/content/content.source.json",
+                "dev/content/content.json" : "dev/content/content.source.json",
             }
         }
     },
@@ -101,7 +101,7 @@ module.exports = function(grunt) {
           threshold: '30KB'
         },
         files: {
-          '_prod/index.html': '_prod/index.html'
+          'docs/index.html': 'docs/index.html'
         }
       }
     }
