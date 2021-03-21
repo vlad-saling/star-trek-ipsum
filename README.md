@@ -8,3 +8,9 @@ Official page
 
 
 Note: handcrafted paraphs are in content.json file
+
+## Dev notes
+
+1) npm install
+2) npx grung watch
+3) npm run serve
