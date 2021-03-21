@@ -10,7 +10,7 @@ module.exports = function(grunt) {
           style: 'expanded',
         },
         files: {
-          'dev/css/style.css': 'dev/css/style.scss',
+          'src/css/style.css': 'src/css/style.scss',
         }
       },
       prod: {
@@ -19,14 +19,14 @@ module.exports = function(grunt) {
           "sourcemap=none": ''
         },
         files: {
-          'docs/css/style.css': 'dev/css/style.scss',
+          'docs/css/style.css': 'src/css/style.scss',
         }
       }
     },
 
     watch: {
       default: {
-        files: ['dev/**/*'],
+        files: ['src/**/*'],
         tasks: ['production'],
         options: {
           spawn: false,
@@ -41,7 +41,7 @@ module.exports = function(grunt) {
       },
       build: {
         files: {
-          'dev/js/the-script.min.js': ['dev/js/the-script.js']
+          'src/js/the-script.min.js': ['src/js/the-script.js']
         }
       }
     },
@@ -49,7 +49,7 @@ module.exports = function(grunt) {
     //merging everything together
     concat: {
       libs: {
-        src: ['dev/js/the-script.min.js'],
+        src: ['src/js/the-script.min.js'],
         dest: 'docs/js/app.js'
       }
     },
@@ -57,7 +57,7 @@ module.exports = function(grunt) {
     processhtml: {
       prod: {
         files: {
-          'docs/index.html': ['dev/index.html.tmpl']
+          'docs/index.html': ['src/index.html.tmpl']
         }
       }
   },
@@ -90,7 +90,7 @@ module.exports = function(grunt) {
                 stripWhitespace: true
             },
             files: {
-                "dev/content/content.json" : "dev/content/content.source.json",
+                "src/content/content.json" : "src/content/content.source.json",
             }
         }
     },
