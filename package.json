@@ -6,7 +6,7 @@
     "url": "https://github.com/vlad-saling/star-trek-ipsum.git"
   },
   "scripts": {
-    "serve": "http-server ./_prod"
+    "serve": "http-server ./docs"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
